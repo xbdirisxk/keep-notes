@@ -1,8 +1,13 @@
-import react from 'react';
-import './App.css';
+import Navbar from './components/Nav';
+import GlobalStyle from './components/styles/Global';
 
 const App = () => {
-    return 'hello world';
+    return (
+        <>
+            <GlobalStyle />
+            <Navbar />
+        </>
+    );
 };
 
 export default App;
