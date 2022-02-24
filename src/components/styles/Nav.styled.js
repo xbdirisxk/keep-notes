@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const Nav = styled.nav`
+    background-color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -8,7 +9,9 @@ const Nav = styled.nav`
     height: 68px;
     padding: 8px 10px;
     position: fixed;
+    top: 0;
     box-shadow: 0 0 1px 0 hsl(0, 0%, 40%);
+    z-index: 10;
 
     .logo {
         width: 15%;
