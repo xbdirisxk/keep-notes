@@ -12,16 +12,20 @@ const Navbar = () => {
     return (
         <Nav>
             <div className='logo'>
-                <FiMenu className='menu-icon' />
+                <span className='menu-icon icon'>
+                    <FiMenu />
+                </span>
                 <img
                     src={imgLogo}
                     alt='logo'
                     style={{ width: 40, height: 40 }}
                 />
-                <span>Keep</span>
+                <span className='logo-name'>Keep</span>
             </div>
-            <div className='search-bar'>
-                <AiOutlineSearch className='search-icon' />
+            <div className='search-field'>
+                <span className='search-icon icon'>
+                    <AiOutlineSearch />
+                </span>
                 <input
                     type='text'
                     placeholder='Search'
@@ -30,13 +34,21 @@ const Navbar = () => {
             </div>
             <div className='nav-menu'>
                 <div>
-                    <TiThMenuOutline />
-                    <AiOutlineSetting />
+                    <span className='icon'>
+                        <TiThMenuOutline />
+                    </span>
+                    <span className='icon'>
+                        <AiOutlineSetting />
+                    </span>
                 </div>
 
                 <div>
-                    <CgMenuGridO />
-                    <SiRobotframework className='robot' />
+                    <span className='icon'>
+                        <CgMenuGridO />
+                    </span>
+                    <span className='robot icon'>
+                        <SiRobotframework />
+                    </span>
                 </div>
             </div>
         </Nav>

@@ -16,11 +16,21 @@ const Nav = styled.nav`
     .logo {
         width: 15%;
     }
-    .search-bar {
+    .search-field {
         width: 65%;
     }
     .nav-menu {
         width: 20%;
+    }
+    .icon {
+        border-radius: 50%;
+        font-size: 1.4rem;
+        padding: 10px 10px 4px 10px;
+        transition: 0.2s;
+    }
+    .icon:hover {
+        background-color: hsl(0, 0%, 90%);
+        cursor: pointer;
     }
     /* logo */
 
@@ -32,10 +42,9 @@ const Nav = styled.nav`
     }
     .menu-icon {
         font-size: 1.3rem;
-        margin: 5px;
-        margin-right: 15px;
+        margin-right: 1px;
     }
-    .logo > span {
+    .logo > .logo-name {
         font-size: 1.35rem;
         margin: 5px;
         opacity: 0.7;
@@ -43,23 +52,28 @@ const Nav = styled.nav`
 
     /* search bar */
 
-    .search-bar {
+    .search-field {
         display: flex;
         justify-items: center;
         align-items: center;
     }
     .search-icon {
-        font-size: 1.35rem;
         position: absolute;
-        margin-left: 15px;
+        margin-left: 5px;
+        margin-top: 5px;
         opacity: 0.8;
     }
-    .search-bar > .search-box {
+    .search-box {
         background-color: hsl(0, 0%, 95%);
         padding: 14px 50px;
         border: 1px;
         border-radius: 10px;
         width: 90%;
+        color: hsl(0, 0%, 40%);
+    }
+    .search-box:focus {
+        box-shadow: 0 0 2px 2px lightgray;
+        color: hsl(0, 0%, 20%);
     }
 
     /* menu */
@@ -67,8 +81,8 @@ const Nav = styled.nav`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: 1.4rem;
     }
+
     .nav-menu > div {
         flex: 1;
         padding: 0 10px;
