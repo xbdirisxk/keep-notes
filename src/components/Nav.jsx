@@ -36,7 +36,7 @@ const Navbar = () => {
 
                 <div>
                     <CgMenuGridO />
-                    <SiRobotframework />
+                    <SiRobotframework className='robot' />
                 </div>
             </div>
         </Nav>

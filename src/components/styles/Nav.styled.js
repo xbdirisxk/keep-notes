@@ -5,9 +5,10 @@ const Nav = styled.nav`
     justify-content: space-between;
     align-items: center;
     width: 100vw;
+    height: 68px;
     padding: 8px 10px;
     position: fixed;
-    box-shadow: 0 0 1px 0 hsl(0, 0%, 10%);
+    box-shadow: 0 0 1px 0 hsl(0, 0%, 40%);
 
     .logo {
         width: 15%;
@@ -40,7 +41,6 @@ const Nav = styled.nav`
     /* search bar */
 
     .search-bar {
-        border-right: 1px solid;
         display: flex;
         justify-items: center;
         align-items: center;
@@ -53,7 +53,7 @@ const Nav = styled.nav`
     }
     .search-bar > .search-box {
         background-color: hsl(0, 0%, 95%);
-        padding: 15px 50px;
+        padding: 14px 50px;
         border: 1px;
         border-radius: 10px;
         width: 90%;
@@ -65,6 +65,13 @@ const Nav = styled.nav`
         justify-content: space-between;
         align-items: center;
         font-size: 1.4rem;
+    }
+    .nav-menu > div {
+        flex: 1;
+        padding: 0 10px;
+    }
+    .nav-menu > div > * {
+        margin: 0 7px;
     }
 `;
 
