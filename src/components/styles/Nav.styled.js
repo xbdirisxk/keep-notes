@@ -85,6 +85,7 @@ const Nav = styled.nav`
 
     .nav-menu > div {
         flex: 1;
+        display: flex;
         padding: 0 10px;
     }
     .nav-menu > div > * {
