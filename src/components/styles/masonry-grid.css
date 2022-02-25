@@ -1,17 +1,13 @@
 .my-masonry-grid {
-    /* border: 2px solid gray; */
     display: flex;
     padding: 20px;
     font-size: 0.9rem;
     line-height: 1.25rem;
 }
 
-.my-masonry-grid_column {
-    /* this the columns class */
-}
 .my-masonry-grid_column div {
     text-align: left;
-    width: 210px;
+    width: 230px;
     max-height: 460px;
     margin: 10px;
     padding: 4px 16px 12px;
