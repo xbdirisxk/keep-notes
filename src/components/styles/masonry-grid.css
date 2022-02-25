@@ -1,0 +1,18 @@
+.my-masonry-grid {
+    /* border: 2px solid gray; */
+    display: flex;
+    padding: 20px;
+    font-size: 1rem;
+    line-height: 1.25rem;
+}
+
+.my-masonry-grid_column {
+    /* this the columns class */
+}
+.my-masonry-grid_column div {
+    width: 204px;
+    overflow: hidden;
+    border: 1px solid;
+    margin: 20px;
+    padding: 15px;
+}

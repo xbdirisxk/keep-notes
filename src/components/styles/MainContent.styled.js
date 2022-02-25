@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const MainContent = styled.main`
-    /* background-color: lightblue; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
