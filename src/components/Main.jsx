@@ -6,13 +6,14 @@ import GridNotes from './GridNotes';
 const Main = () => {
     const [notes, setNotes] = useState([
         {
+            id: 1,
             title: 'sleeping early',
             body: 'as my mom says if you sleep early then you will wake up early',
         },
     ]);
     return (
         <MainContent>
-            <AddNoteField setNotes={setNotes} />
+            <AddNoteField notes={notes} setNotes={setNotes} />
             <GridNotes notes={notes} />
         </MainContent>
     );

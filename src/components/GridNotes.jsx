@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles/masonry-grid.css';
 import Masonry from 'react-masonry-css';
 
 const GridNotes = ({ notes }) => {
@@ -16,7 +15,7 @@ const GridNotes = ({ notes }) => {
             columnClassName='my-masonry-grid_column'
         >
             {notes.map((note) => (
-                <div>
+                <div key={note.id}>
                     <h4>{note.title}</h4>
                     <p>{note.body}</p>
                 </div>
