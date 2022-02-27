@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './components/styles/global-styles.css';
 import './components/styles/masonry-grid.css';
 import styled from 'styled-components';
@@ -7,12 +8,14 @@ import SideBar from './components/SideBar';
 import Main from './components/Main';
 
 const App = () => {
+    const [openModal, setOpen] = useState(false);
+
     return (
         <>
             <Navbar />
             <Container>
                 <SideBar />
-                <Main />
+                <Main openModal={openModal} setOpen={setOpen} />
             </Container>
         </>
     );

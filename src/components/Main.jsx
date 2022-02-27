@@ -3,7 +3,7 @@ import MainContent from './styles/MainContent.styled';
 import AddNoteField from './AddNoteField';
 import GridNotes from './GridNotes';
 
-const Main = () => {
+const Main = ({ openModal, setOpen }) => {
     const [notes, setNotes] = useState([
         {
             id: 1,
@@ -11,10 +11,18 @@ const Main = () => {
             body: 'as my mom says if you sleep early then you will wake up early',
         },
     ]);
+    const [modal, setModal] = useState(null);
+
     return (
         <MainContent>
             <AddNoteField notes={notes} setNotes={setNotes} />
-            <GridNotes notes={notes} />
+            <GridNotes
+                notes={notes}
+                openModal={openModal}
+                setOpen={setOpen}
+                modal={modal}
+                setModal={setModal}
+            />
         </MainContent>
     );
 };

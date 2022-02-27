@@ -24,3 +24,21 @@
     cursor: pointer;
     box-shadow: 0 0 5px 2.2px hsl(0, 0%, 83%);
 }
+
+/* ----------- Modal styles ------------ */
+
+.modal-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    border: 1px;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    max-width: 60vw;
+    max-height: 85vh;
+    overflow: auto;
+}
+
+.modal-box > * {
+}

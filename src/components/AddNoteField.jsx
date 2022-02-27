@@ -47,7 +47,7 @@ const InputField = styled.div`
         border-radius: 8px;
         box-shadow: 0 1px 3px 2px lightgray;
         padding: 5px;
-        color: #927802;
+        color: hsl(0, 0%, 30%);
     }
 
     .input-title-field {
