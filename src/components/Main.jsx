@@ -8,7 +8,7 @@ const Main = ({ openModal, setOpen }) => {
         {
             id: 1,
             title: 'sleeping early',
-            body: 'as my mom says if you sleep early then you will wake up early',
+            body: '2015 research proof that those who sleep early and wake up early are more productive than those who sleep late at night',
         },
     ]);
     const [modal, setModal] = useState(null);

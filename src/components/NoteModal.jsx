@@ -3,14 +3,14 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 
-const NoteModal = ({ openModal, setOpen, modal }) => {
+const NoteModal = ({ open, setOpen, modal }) => {
     const handleClose = () => setOpen(false);
 
     return (
         <>
             {modal && (
                 <Modal
-                    open={openModal}
+                    open={open}
                     onClose={handleClose}
                     aria-labelledby='modal-modal-title'
                     aria-describedby='modal-modal-description'

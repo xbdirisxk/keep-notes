@@ -1,9 +1,7 @@
 import { useState } from 'react';
-import './components/styles/global-styles.css';
-import './components/styles/masonry-grid.css';
+import './components/styles/generic-styles.css';
 import styled from 'styled-components';
 import Navbar from './components/Nav';
-
 import SideBar from './components/SideBar';
 import Main from './components/Main';
 

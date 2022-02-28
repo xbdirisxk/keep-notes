@@ -29,7 +29,7 @@ const GridNotes = ({ notes, openModal, setOpen, modal, setModal }) => {
                     </div>
                 ))}
             </Masonry>
-            <NoteModal openModal={openModal} setOpen={setOpen} modal={modal} />
+            <NoteModal open={openModal} setOpen={setOpen} modal={modal} />
         </>
     );
 };

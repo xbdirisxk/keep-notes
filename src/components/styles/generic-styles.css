@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+/* =============
+   global styles 
+   ============= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
+a {
+    text-decoration: none;
+}
+img {
+    display: block;
+    width: 100%;
+}
+button,
+input,
+textarea {
+    border: none;
+    outline: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+}
+button {
+    cursor: pointer;
+}
+
+/* ============
+   masonry grid
+   ============ */
+
+.my-masonry-grid {
+    display: flex;
+    padding: 20px;
+    font-size: 0.9rem;
+    line-height: 1.25rem;
+}
+
+.my-masonry-grid_column div {
+    text-align: left;
+    width: 230px;
+    max-height: 460px;
+    margin: 10px;
+    padding: 4px 16px 12px;
+    border-radius: 10px;
+    box-shadow: 0 0 1px 1px hsl(0, 0%, 83%);
+    transition: 0.3s;
+
+    /* ----- */
+    overflow: hidden;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+.my-masonry-grid_column div:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px 2.2px hsl(0, 0%, 83%);
+}
+
+/* ============
+   Modal styles
+   ============ */
+
+.modal-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    border: 1px;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    min-width: 50vw;
+    max-width: 60vw;
+    max-height: 85vh;
+    overflow: auto;
+}
+
+#modal-modal-title {
+    font-weight: bold;
+}
