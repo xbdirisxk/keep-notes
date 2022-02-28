@@ -1,33 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const AddNoteField = ({ notes, setNotes }) => {
-    const handleAdding = (event) => {
+    const [title, setTitle] = useState('');
+    const [body, setBody] = useState('');
+
+    const handleAdd = (event) => {
         event.preventDefault();
+
+        if (!title) {
+            alert('please make note title');
+            return;
+        }
+
         setNotes([
             ...notes,
             {
                 id: Math.random() * 1000000,
-                title: event.target.title.value,
-                body: event.target.body.value,
+                title,
+                body,
             },
         ]);
+        setTitle('');
+        setBody('');
     };
 
     return (
         <InputField>
-            <form className='text-inputs' onSubmit={handleAdding}>
+            <form className='text-inputs' onSubmit={handleAdd}>
                 <input
                     type='text'
                     placeholder='title'
-                    name='title'
                     className='input-title-field'
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
                 />
                 <input
                     type='text'
                     placeholder='Take a note...'
-                    name='body'
                     className='input-note-field'
+                    value={body}
+                    onChange={(e) => setBody(e.target.value)}
                 />
                 <button type='submit'></button>
             </form>
