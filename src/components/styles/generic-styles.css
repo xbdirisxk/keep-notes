@@ -48,24 +48,48 @@ button {
     line-height: 1.25rem;
 }
 
-.my-masonry-grid_column div {
+/* note box */
+
+.note-box {
     text-align: left;
     width: 230px;
     max-height: 460px;
     margin: 10px;
-    padding: 4px 16px 12px;
+    line-height: 1.3rem;
     border-radius: 10px;
     box-shadow: 0 0 1px 1px hsl(0, 0%, 83%);
     transition: 0.3s;
-
-    /* ----- */
-    overflow: hidden;
-    white-space: pre-wrap;
-    word-wrap: break-word;
 }
-.my-masonry-grid_column div:hover {
-    cursor: pointer;
+
+.note-box:hover {
+    cursor: default;
     box-shadow: 0 0 5px 2.2px hsl(0, 0%, 83%);
+}
+.note-box > div:first-child {
+    padding: 4px 16px 2px;
+    cursor: pointer;
+}
+.note-box > div:first-child > * {
+    padding: 2px 0;
+}
+.note-box > .icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 0 0 3px;
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+.note-box > .icons > * {
+    margin-left: 10px;
+    padding: 2px;
+    border-radius: 30px;
+    padding: 6px 6px 1px;
+    transition: 0.2s;
+}
+.note-box > .icons > *:hover {
+    background-color: hsl(56, 45%, 80%);
+    cursor: pointer;
 }
 
 /* ============
@@ -80,8 +104,8 @@ button {
     border: 1px;
     border-radius: 10px;
     transform: translate(-50%, -50%);
-    min-width: 50vw;
-    max-width: 60vw;
+    min-width: 30vw;
+    max-width: 50vw;
     max-height: 85vh;
     overflow: auto;
 }

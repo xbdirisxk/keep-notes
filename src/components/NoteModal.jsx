@@ -2,6 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import Backdrop from '@mui/material/Backdrop';
 
 const NoteModal = ({ open, setOpen, modal }) => {
     const handleClose = () => setOpen(false);
@@ -10,10 +11,15 @@ const NoteModal = ({ open, setOpen, modal }) => {
         <>
             {modal && (
                 <Modal
+                    aria-labelledby='transition-modal-title'
+                    aria-describedby='transition-modal-description'
                     open={open}
                     onClose={handleClose}
-                    aria-labelledby='modal-modal-title'
-                    aria-describedby='modal-modal-description'
+                    closeAfterTransition
+                    BackdropComponent={Backdrop}
+                    BackdropProps={{
+                        timeout: 500,
+                    }}
                 >
                     <Box
                         sx={{ bgcolor: 'background.paper' }}

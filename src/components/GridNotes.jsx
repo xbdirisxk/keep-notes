@@ -1,7 +1,11 @@
 import React from 'react';
 import Masonry from 'react-masonry-css';
 import NoteModal from './NoteModal';
+import { MdOutlineDeleteForever, MdOutlineColorLens } from 'react-icons/md';
+import { BiBellPlus, BiArchiveOut } from 'react-icons/bi';
+import { IoMdMore } from 'react-icons/io';
 
+//
 const GridNotes = ({ notes, openModal, setOpen, modal, setModal }) => {
     const handleOpen = (id) => {
         const note = notes.filter((note) => note.id === id)[0];
@@ -23,9 +27,28 @@ const GridNotes = ({ notes, openModal, setOpen, modal, setModal }) => {
                 columnClassName='my-masonry-grid_column'
             >
                 {notes.map((note) => (
-                    <div key={note.id} onClick={() => handleOpen(note.id)}>
-                        <h4>{note.title}</h4>
-                        <p>{note.body}</p>
+                    <div key={note.id} className='note-box'>
+                        <div onClick={() => handleOpen(note.id)}>
+                            <h3>{note.title}</h3>
+                            <p>{note.body}</p>
+                        </div>
+                        <div className='icons'>
+                            <span>
+                                <BiArchiveOut />
+                            </span>
+                            <span>
+                                <MdOutlineColorLens />
+                            </span>
+                            <span>
+                                <BiBellPlus />
+                            </span>
+                            <span>
+                                <MdOutlineDeleteForever />
+                            </span>
+                            <span>
+                                <IoMdMore />
+                            </span>
+                        </div>
                     </div>
                 ))}
             </Masonry>
