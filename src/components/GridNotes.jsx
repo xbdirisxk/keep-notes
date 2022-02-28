@@ -6,11 +6,23 @@ import { BiBellPlus, BiArchiveOut } from 'react-icons/bi';
 import { IoMdMore } from 'react-icons/io';
 
 //
-const GridNotes = ({ notes, openModal, setOpen, modal, setModal }) => {
+const GridNotes = ({
+    notes,
+    setNotes,
+    openModal,
+    setOpen,
+    modal,
+    setModal,
+}) => {
     const handleOpen = (id) => {
         const note = notes.filter((note) => note.id === id)[0];
         setModal(note);
         setOpen(true);
+    };
+
+    const handleDelete = (id) => {
+        const newNotes = notes.filter((note) => note.id !== id);
+        setNotes(newNotes);
     };
 
     const breakpointColumnsObj = {
@@ -42,7 +54,7 @@ const GridNotes = ({ notes, openModal, setOpen, modal, setModal }) => {
                             <span>
                                 <BiBellPlus />
                             </span>
-                            <span>
+                            <span onClick={() => handleDelete(note.id)}>
                                 <MdOutlineDeleteForever />
                             </span>
                             <span>

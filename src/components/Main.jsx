@@ -29,6 +29,7 @@ const Main = ({ openModal, setOpen }) => {
             <AddNoteField notes={notes} setNotes={setNotes} />
             <GridNotes
                 notes={notes}
+                setNotes={setNotes}
                 openModal={openModal}
                 setOpen={setOpen}
                 modal={modal}
