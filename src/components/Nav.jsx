@@ -6,7 +6,6 @@ import { AiOutlineSearch, AiOutlineSetting } from 'react-icons/ai';
 import { TiThMenuOutline } from 'react-icons/ti';
 import { CgMenuGridO } from 'react-icons/cg';
 import { SiRobotframework } from 'react-icons/si';
-// import {AiOutlineAppstore} from 'react-icons/ai';
 
 const Navbar = () => {
     return (

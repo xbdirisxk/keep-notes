@@ -12,6 +12,7 @@ const Nav = styled.nav`
     top: 0;
     box-shadow: 0 0 1px 0 hsl(0, 0%, 40%);
     z-index: 10;
+    box-sizing: border-box;
 
     .logo {
         width: 15%;
@@ -90,6 +91,26 @@ const Nav = styled.nav`
     }
     .nav-menu > div > * {
         margin: 0 7px;
+    }
+    .robot {
+        background-color: aqua;
+    }
+
+    /* responsive to 800px width */
+
+    @media (max-width: 800px) {
+        display: grid;
+        grid-template-columns: 30vw 10vw 60vw;
+        justify-content: center;
+        align-items: center;
+
+        .search-field > .icon {
+            font-size: 1.55rem;
+        }
+
+        .search-box {
+            display: none;
+        }
     }
 `;
 
