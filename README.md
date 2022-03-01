@@ -2,6 +2,8 @@
 
 -> [`The Odin Project`](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/javascript-final-project) - final frontend project
 
+### [Live Demo](https://xbdirisxk.github.io/keep-notes/) :point_left:
+
 ## Features
 
 -   add notes
