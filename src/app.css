@@ -93,20 +93,6 @@ button {
     cursor: pointer;
 }
 
-@media (max-width: 750px) {
-    .note-box {
-        width: 70vw;
-    }
-    .note-box > div:first-child {
-        font-size: 1.2rem;
-        line-height: 1.5rem;
-        min-height: 23vh;
-    }
-    .note-box > div:first-child > * {
-        padding: 7px 0;
-    }
-}
-
 /* ============
    Modal styles
    ============ */
@@ -127,4 +113,26 @@ button {
 
 #modal-modal-title {
     font-weight: bold;
+}
+
+/* responsive */
+@media (max-width: 750px) {
+    /* grid notes */
+    .note-box {
+        width: 70vw;
+    }
+    .note-box > div:first-child {
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+        min-height: 23vh;
+    }
+    .note-box > div:first-child > * {
+        padding: 7px 0;
+    }
+
+    /* modal */
+    .modal-box {
+        min-width: 86vw;
+        max-width: 95vw;
+    }
 }
