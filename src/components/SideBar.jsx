@@ -10,23 +10,23 @@ const SideBar = () => {
         <SidebarContainer>
             <div>
                 <MdLightbulbOutline className='icon' />
-                <span>Notes</span>
+                <span className='text'>Notes</span>
             </div>
             <div>
                 <AiOutlineBell className='icon' />
-                <span>Reminders</span>
+                <span className='text'>Reminders</span>
             </div>
             <div>
                 <BiPencil className='icon' />
-                <span>Edit labels</span>
+                <span className='text'>Edit labels</span>
             </div>
             <div>
                 <BiArchiveIn className='icon' />
-                <span>Archive</span>
+                <span className='text'>Archive</span>
             </div>
             <div>
                 <BsTrash className='icon' />
-                <span>Trash</span>
+                <span className='text'>Trash</span>
             </div>
         </SidebarContainer>
     );

@@ -5,7 +5,6 @@ import { MdOutlineDeleteForever, MdOutlineColorLens } from 'react-icons/md';
 import { BiBellPlus, BiArchiveOut } from 'react-icons/bi';
 import { IoMdMore } from 'react-icons/io';
 
-//
 const GridNotes = ({
     notes,
     setNotes,
@@ -28,8 +27,8 @@ const GridNotes = ({
     const breakpointColumnsObj = {
         default: 3,
         1100: 3,
-        700: 2,
-        500: 1,
+        810: 2,
+        750: 1,
     };
     return (
         <>

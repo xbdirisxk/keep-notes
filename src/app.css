@@ -44,7 +44,7 @@ button {
 .my-masonry-grid {
     display: flex;
     padding: 20px;
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.25rem;
 }
 
@@ -52,12 +52,13 @@ button {
 
 .note-box {
     text-align: left;
-    width: 230px;
-    max-height: 460px;
     margin: 10px;
     line-height: 1.3rem;
     border-radius: 10px;
     box-shadow: 0 0 1px 1px hsl(0, 0%, 83%);
+    width: 230px;
+    max-height: 450px;
+    overflow: hidden;
     transition: 0.3s;
 }
 
@@ -70,7 +71,7 @@ button {
     cursor: pointer;
 }
 .note-box > div:first-child > * {
-    padding: 2px 0;
+    padding: 4px 0;
 }
 .note-box > .icons {
     display: flex;
@@ -90,6 +91,20 @@ button {
 .note-box > .icons > *:hover {
     background-color: hsl(56, 45%, 80%);
     cursor: pointer;
+}
+
+@media (max-width: 750px) {
+    .note-box {
+        width: 70vw;
+    }
+    .note-box > div:first-child {
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+        min-height: 23vh;
+    }
+    .note-box > div:first-child > * {
+        padding: 7px 0;
+    }
 }
 
 /* ============

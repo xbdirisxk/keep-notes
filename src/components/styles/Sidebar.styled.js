@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const SidebarContainer = styled.div`
-    /* border: 1px solid; */
     display: flex;
     flex-direction: column;
     padding: 5px 0;
@@ -35,6 +34,20 @@ const SidebarContainer = styled.div`
     div > .icon {
         font-size: 1.45rem;
         margin-left: 20px;
+    }
+
+    @media (max-width: 800px) {
+        width: 12vw;
+
+        div {
+            padding: 0;
+        }
+        div > .text {
+            display: none;
+        }
+        div > .icon {
+            margin-left: 15px;
+        }
     }
 `;
 

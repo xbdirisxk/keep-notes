@@ -93,7 +93,7 @@ const Nav = styled.nav`
         margin: 0 7px;
     }
     .robot {
-        background-color: aqua;
+        background-color: hsl(194, 48%, 88%);
     }
 
     /* responsive to 800px width */

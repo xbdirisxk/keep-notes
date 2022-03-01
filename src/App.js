@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './components/styles/generic-styles.css';
+import './app.css';
 import styled from 'styled-components';
 import Navbar from './components/Nav';
 import SideBar from './components/SideBar';
