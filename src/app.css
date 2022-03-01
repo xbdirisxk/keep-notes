@@ -115,7 +115,9 @@ button {
     font-weight: bold;
 }
 
-/* responsive */
+/* ==========
+   responsive
+   ========== */
 @media (max-width: 750px) {
     /* grid notes */
     .note-box {
@@ -133,6 +135,5 @@ button {
     /* modal */
     .modal-box {
         min-width: 86vw;
-        max-width: 95vw;
     }
 }

@@ -75,6 +75,10 @@ const InputField = styled.div`
     input:focus {
         color: #000;
     }
+
+    @media (max-width: 800px) {
+        width: 90vw;
+    }
 `;
 
 export default AddNoteField;
