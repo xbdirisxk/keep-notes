@@ -1,5 +1,6 @@
 import React from 'react';
 import Masonry from 'react-masonry-css';
+import emptyNotesIcon from './assets/add_notes_undraw.svg';
 import NoteModal from './NoteModal';
 import { MdOutlineDeleteForever, MdOutlineColorLens } from 'react-icons/md';
 import { BiBellPlus, BiArchiveOut } from 'react-icons/bi';
@@ -33,37 +34,48 @@ const GridNotes = ({
     };
     return (
         <>
-            <Masonry
-                breakpointCols={breakpointColumnsObj}
-                className='my-masonry-grid'
-                columnClassName='my-masonry-grid_column'
-            >
-                {notes.map((note) => (
-                    <div key={note.id} className='note-box'>
-                        <div onClick={() => handleOpen(note.id)}>
-                            <h3>{note.title}</h3>
-                            <p>{note.body}</p>
+            {notes.length > 0 ? (
+                <Masonry
+                    breakpointCols={breakpointColumnsObj}
+                    className='my-masonry-grid'
+                    columnClassName='my-masonry-grid_column'
+                >
+                    {notes.map((note) => (
+                        <div key={note.id} className='note-box'>
+                            <div onClick={() => handleOpen(note.id)}>
+                                <h3>{note.title}</h3>
+                                <p>{note.body}</p>
+                            </div>
+                            <div className='icons'>
+                                <span>
+                                    <BiArchiveOut />
+                                </span>
+                                <span>
+                                    <MdOutlineColorLens />
+                                </span>
+                                <span>
+                                    <BiBellPlus />
+                                </span>
+                                <span onClick={() => handleDelete(note.id)}>
+                                    <MdOutlineDeleteForever />
+                                </span>
+                                <span>
+                                    <IoMdMore />
+                                </span>
+                            </div>
                         </div>
-                        <div className='icons'>
-                            <span>
-                                <BiArchiveOut />
-                            </span>
-                            <span>
-                                <MdOutlineColorLens />
-                            </span>
-                            <span>
-                                <BiBellPlus />
-                            </span>
-                            <span onClick={() => handleDelete(note.id)}>
-                                <MdOutlineDeleteForever />
-                            </span>
-                            <span>
-                                <IoMdMore />
-                            </span>
-                        </div>
-                    </div>
-                ))}
-            </Masonry>
+                    ))}
+                </Masonry>
+            ) : (
+                <img
+                    src={emptyNotesIcon}
+                    width={500}
+                    height={350}
+                    style={{ margin: 20 }}
+                    className='emp'
+                    alt='add notes'
+                />
+            )}
             <NoteModal
                 open={openModal}
                 setOpen={setOpen}
