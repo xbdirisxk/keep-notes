@@ -3,8 +3,11 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Backdrop from '@mui/material/Backdrop';
+import { MdOutlineDeleteForever, MdOutlineColorLens } from 'react-icons/md';
+import { BiBellPlus, BiArchiveOut } from 'react-icons/bi';
+import { IoMdMore } from 'react-icons/io';
 
-const NoteModal = ({ open, setOpen, modal }) => {
+const NoteModal = ({ open, setOpen, modal, handleDelete }) => {
     const handleClose = () => setOpen(false);
 
     return (
@@ -35,6 +38,23 @@ const NoteModal = ({ open, setOpen, modal }) => {
                         <Typography id='modal-modal-description' sx={{ mt: 2 }}>
                             {modal.body}
                         </Typography>
+                        <div className='icons'>
+                            <span>
+                                <BiArchiveOut />
+                            </span>
+                            <span>
+                                <MdOutlineColorLens />
+                            </span>
+                            <span>
+                                <BiBellPlus />
+                            </span>
+                            <span onClick={() => handleDelete(modal.id)}>
+                                <MdOutlineDeleteForever />
+                            </span>
+                            <span>
+                                <IoMdMore />
+                            </span>
+                        </div>
                     </Box>
                 </Modal>
             )}

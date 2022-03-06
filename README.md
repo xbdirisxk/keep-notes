@@ -5,6 +5,7 @@
 ## Features
 
 -   add notes
+-   show notes in mosonry grid
 -   view notes in modal
 -   delete notes
 -   responsive grid

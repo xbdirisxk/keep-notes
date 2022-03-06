@@ -102,6 +102,7 @@ button {
     top: 50%;
     left: 50%;
     padding: 20px;
+    padding-bottom: 5px;
     border: 1px;
     border-radius: 10px;
     transform: translate(-50%, -50%);
@@ -113,6 +114,24 @@ button {
 
 #modal-modal-title {
     font-weight: bold;
+}
+.modal-box > .icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+.modal-box > .icons > * {
+    margin-left: 10px;
+    padding: 2px;
+    border-radius: 30px;
+    padding: 6px 6px 1px;
+    transition: 0.2s;
+}
+.modal-box > .icons > *:hover {
+    background-color: hsl(56, 45%, 80%);
+    cursor: default;
 }
 
 /* ==========

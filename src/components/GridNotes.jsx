@@ -22,6 +22,7 @@ const GridNotes = ({
     const handleDelete = (id) => {
         const newNotes = notes.filter((note) => note.id !== id);
         setNotes(newNotes);
+        setOpen(false);
     };
 
     const breakpointColumnsObj = {
@@ -63,7 +64,12 @@ const GridNotes = ({
                     </div>
                 ))}
             </Masonry>
-            <NoteModal open={openModal} setOpen={setOpen} modal={modal} />
+            <NoteModal
+                open={openModal}
+                setOpen={setOpen}
+                modal={modal}
+                handleDelete={handleDelete}
+            />
         </>
     );
 };
