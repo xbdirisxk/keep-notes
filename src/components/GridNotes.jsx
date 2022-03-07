@@ -1,6 +1,7 @@
 import React from 'react';
 import NoteModal from './NoteModal';
 import Note from './Note';
+import styled from 'styled-components';
 import Masonry from 'react-masonry-css';
 import emptyNotesIcon from './assets/add_notes_undraw.svg';
 
@@ -41,7 +42,7 @@ const GridNotes = ({ notes, ...props }) => {
                     ))}
                 </Masonry>
             ) : (
-                <img
+                <Image
                     src={emptyNotesIcon}
                     width={500}
                     height={350}
@@ -59,4 +60,8 @@ const GridNotes = ({ notes, ...props }) => {
     );
 };
 
+const Image = styled.img`
+    margin: 30px;
+    pointer-events: none;
+`;
 export default GridNotes;
