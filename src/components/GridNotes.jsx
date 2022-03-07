@@ -1,29 +1,20 @@
 import React from 'react';
+import NoteModal from './NoteModal';
+import Note from './Note';
 import Masonry from 'react-masonry-css';
 import emptyNotesIcon from './assets/add_notes_undraw.svg';
-import NoteModal from './NoteModal';
-import { MdOutlineDeleteForever, MdOutlineColorLens } from 'react-icons/md';
-import { BiBellPlus, BiArchiveOut } from 'react-icons/bi';
-import { IoMdMore } from 'react-icons/io';
 
-const GridNotes = ({
-    notes,
-    setNotes,
-    openModal,
-    setOpen,
-    modal,
-    setModal,
-}) => {
+const GridNotes = ({ notes, ...props }) => {
     const handleOpen = (id) => {
         const note = notes.filter((note) => note.id === id)[0];
-        setModal(note);
-        setOpen(true);
+        props.setModal(note);
+        props.setOpen(true);
     };
 
     const handleDelete = (id) => {
         const newNotes = notes.filter((note) => note.id !== id);
-        setNotes(newNotes);
-        setOpen(false);
+        props.setNotes(newNotes);
+        props.setOpen(false);
     };
 
     const breakpointColumnsObj = {
@@ -34,36 +25,19 @@ const GridNotes = ({
     };
     return (
         <>
-            {notes.length > 0 ? (
+            {notes.length ? (
                 <Masonry
                     breakpointCols={breakpointColumnsObj}
                     className='my-masonry-grid'
                     columnClassName='my-masonry-grid_column'
                 >
                     {notes.map((note) => (
-                        <div key={note.id} className='note-box'>
-                            <div onClick={() => handleOpen(note.id)}>
-                                <h3>{note.title}</h3>
-                                <p>{note.body}</p>
-                            </div>
-                            <div className='icons'>
-                                <span>
-                                    <BiArchiveOut />
-                                </span>
-                                <span>
-                                    <MdOutlineColorLens />
-                                </span>
-                                <span>
-                                    <BiBellPlus />
-                                </span>
-                                <span onClick={() => handleDelete(note.id)}>
-                                    <MdOutlineDeleteForever />
-                                </span>
-                                <span>
-                                    <IoMdMore />
-                                </span>
-                            </div>
-                        </div>
+                        <Note
+                            key={note.id}
+                            note={note}
+                            handleOpen={handleOpen}
+                            handleDelete={handleDelete}
+                        />
                     ))}
                 </Masonry>
             ) : (
@@ -71,15 +45,14 @@ const GridNotes = ({
                     src={emptyNotesIcon}
                     width={500}
                     height={350}
-                    style={{ margin: 20 }}
-                    className='emp'
                     alt='add notes'
+                    className='empty-notes-image'
                 />
             )}
             <NoteModal
-                open={openModal}
-                setOpen={setOpen}
-                modal={modal}
+                open={props.openModal}
+                setOpen={props.setOpen}
+                modal={props.modal}
                 handleDelete={handleDelete}
             />
         </>

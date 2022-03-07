@@ -133,6 +133,11 @@ button {
     background-color: hsl(56, 45%, 80%);
     cursor: default;
 }
+/* empty notes image */
+.empty-notes-image {
+    margin: 30px;
+    pointer-events: none;
+}
 
 /* ==========
    responsive
