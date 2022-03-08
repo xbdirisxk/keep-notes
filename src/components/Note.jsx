@@ -73,5 +73,19 @@ const NoteItem = styled.div`
         background-color: hsl(56, 45%, 80%);
         cursor: pointer;
     }
+
+    /* responsice */
+    @media (max-width: 750px) {
+        width: 70vw;
+
+        .content {
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+            min-height: 23vh;
+        }
+        .content > * {
+            padding: 7px 0;
+        }
+    }
 `;
 export default Note;

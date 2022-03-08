@@ -44,8 +44,6 @@ const GridNotes = ({ notes, ...props }) => {
             ) : (
                 <Image
                     src={emptyNotesIcon}
-                    width={500}
-                    height={350}
                     alt='add notes'
                     className='empty-notes-image'
                 />
@@ -61,6 +59,8 @@ const GridNotes = ({ notes, ...props }) => {
 };
 
 const Image = styled.img`
+    height: 350px;
+    max-width: 500px;
     margin: 30px;
     pointer-events: none;
 `;

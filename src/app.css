@@ -89,24 +89,7 @@ button {
     cursor: default;
 }
 
-/* ==========
-   responsive
-   ========== */
 @media (max-width: 750px) {
-    /* grid notes */
-    .note-box {
-        width: 70vw;
-    }
-    .note-box > div:first-child {
-        font-size: 1.2rem;
-        line-height: 1.5rem;
-        min-height: 23vh;
-    }
-    .note-box > div:first-child > * {
-        padding: 7px 0;
-    }
-
-    /* modal */
     .modal-box {
         min-width: 86vw;
     }
