@@ -14,10 +14,13 @@ const theme = {
             },
         },
         sidebar: {
-            selectedItemBackground: 'hsl(37, 40%, 20%)',
+            selectedItemBackground: 'hsl(37, 40%, 30%)',
             hover: {
                 backgroundColor: 'hsl(0, 0%, 30%)',
             },
+        },
+        inputField: {
+            background: 'hsl(0, 0%, 30%)',
         },
     },
 };

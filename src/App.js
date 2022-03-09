@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './app.css';
 import styled from 'styled-components';
 import { ThemeProvider } from 'styled-components';
+import GlobalStyles from './components/styles/Global.styled';
 import theme from './components/theme/Themes';
 import Navbar from './components/Nav';
 import SideBar from './components/SideBar';
@@ -15,8 +16,9 @@ const App = () => {
         themeType === 'light' ? setThemeType('dark') : setThemeType('light');
     };
     return (
-        <ThemeProvider theme={theme} themeType={themeType}>
+        <ThemeProvider theme={theme}>
             <>
+                <GlobalStyles themeType={themeType} />
                 <Navbar themeToggler={themeToggler} themeType={themeType} />
                 <Container>
                     <SideBar themeType={themeType} />

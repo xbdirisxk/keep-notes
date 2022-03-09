@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import InputContainer from './styles/InputField.styled';
 
-const AddNoteField = ({ notes, setNotes }) => {
+const AddNoteField = ({ notes, setNotes, themeType }) => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
 
@@ -26,8 +26,8 @@ const AddNoteField = ({ notes, setNotes }) => {
     };
 
     return (
-        <InputField>
-            <form className='text-inputs' onSubmit={handleAdd}>
+        <InputContainer themeType={themeType}>
+            <form className='form' onSubmit={handleAdd}>
                 <input
                     type='text'
                     placeholder='title'
@@ -44,41 +44,8 @@ const AddNoteField = ({ notes, setNotes }) => {
                 />
                 <button type='submit'></button>
             </form>
-        </InputField>
+        </InputContainer>
     );
 };
-
-const InputField = styled.div`
-    display: flex;
-    justify-content: center;
-    font-size: 1.2rem;
-    padding: 5px;
-    width: 80%;
-
-    .text-inputs {
-        width: 80%;
-        border-radius: 8px;
-        box-shadow: 0 1px 3px 2px lightgray;
-        padding: 5px;
-        color: hsl(0, 0%, 30%);
-    }
-
-    .input-title-field {
-        width: 100%;
-        padding: 10px 15px;
-    }
-    .input-note-field {
-        font-size: 1rem;
-        width: 100%;
-        padding: 10px 15px;
-    }
-    input:focus {
-        color: #000;
-    }
-
-    @media (max-width: 800px) {
-        width: 90vw;
-    }
-`;
 
 export default AddNoteField;

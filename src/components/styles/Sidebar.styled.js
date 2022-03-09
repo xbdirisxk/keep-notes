@@ -32,7 +32,7 @@ const SidebarContainer = styled.div`
     div:nth-child(1n + 2):hover {
         background-color: ${({ theme, themeType }) =>
             themeType === 'light'
-                ? '#feefc3'
+                ? 'hsl(0, 0%, 90%)'
                 : theme.dark.sidebar.hover.backgroundColor};
         border-radius: 0 30px 30px 0;
     }

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import MainContent from './styles/MainContent.styled';
-import AddNoteField from './AddNoteField';
+import InputNoteField from './InputNoteField';
 import GridNotes from './GridNotes';
 
-const Main = ({ openModal, setOpen }) => {
+const Main = ({ openModal, setOpen, themeType }) => {
     const [notes, setNotes] = useState([
         {
             id: 1,
@@ -26,7 +26,11 @@ const Main = ({ openModal, setOpen }) => {
 
     return (
         <MainContent>
-            <AddNoteField notes={notes} setNotes={setNotes} />
+            <InputNoteField
+                notes={notes}
+                setNotes={setNotes}
+                themeType={themeType}
+            />
             <GridNotes
                 notes={notes}
                 setNotes={setNotes}
@@ -34,6 +38,7 @@ const Main = ({ openModal, setOpen }) => {
                 setOpen={setOpen}
                 modal={modal}
                 setModal={setModal}
+                themeType={themeType}
             />
         </MainContent>
     );
