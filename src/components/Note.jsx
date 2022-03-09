@@ -33,6 +33,8 @@ const Note = ({ note, themeType, handleOpen, handleDelete }) => {
 };
 
 const NoteItem = styled.div`
+    background-color: ${({ theme, themeType }) =>
+        themeType === 'light' ? '#fff' : theme.dark.background};
     text-align: left;
     margin: 10px;
     line-height: 1.3rem;
