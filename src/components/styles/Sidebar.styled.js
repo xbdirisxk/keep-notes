@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 const SidebarContainer = styled.div`
+    background-color: ${({ theme, themeType }) =>
+        themeType === 'light' ? '#fff' : theme.dark.background};
+    color: ${({ theme, themeType }) =>
+        themeType === 'light' ? '#000' : theme.dark.fontColor};
     display: flex;
     flex-direction: column;
     padding: 5px 0;
@@ -19,11 +23,17 @@ const SidebarContainer = styled.div`
         transition: 0.2s;
     }
     div:first-child {
-        background-color: #feefc3;
+        background-color: ${({ theme, themeType }) =>
+            themeType === 'light'
+                ? '#feefc3'
+                : theme.dark.sidebar.selectedItemBackground};
         border-radius: 0 30px 30px 0;
     }
     div:nth-child(1n + 2):hover {
-        background-color: hsl(0, 0%, 90%);
+        background-color: ${({ theme, themeType }) =>
+            themeType === 'light'
+                ? '#feefc3'
+                : theme.dark.sidebar.hover.backgroundColor};
         border-radius: 0 30px 30px 0;
     }
 

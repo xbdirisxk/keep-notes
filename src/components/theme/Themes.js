@@ -7,8 +7,18 @@ const theme = {
     dark: {
         background: '#202124',
         fontColor: '#fff',
-        hoverBackgoundColor: 'hsl(0,0%, 30%)',
-        searchBoxBackground: 'hsl(0, 0%, 30%)',
+        nav: {
+            searchBoxBackground: 'hsl(0, 0%, 30%)',
+            hover: {
+                BackgoundColor: 'hsl(0,0%, 30%)',
+            },
+        },
+        sidebar: {
+            selectedItemBackground: 'hsl(37, 40%, 20%)',
+            hover: {
+                backgroundColor: 'hsl(0, 0%, 30%)',
+            },
+        },
     },
 };
 

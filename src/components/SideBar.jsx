@@ -5,9 +5,9 @@ import { AiOutlineBell } from 'react-icons/ai';
 import { BiPencil, BiArchiveIn } from 'react-icons/bi';
 import { BsTrash } from 'react-icons/bs';
 
-const SideBar = () => {
+const SideBar = ({ themeType }) => {
     return (
-        <SidebarContainer>
+        <SidebarContainer themeType={themeType}>
             <div>
                 <MdLightbulbOutline className='icon' />
                 <span className='text'>Notes</span>

@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 const Nav = styled.nav`
-    background-color: ${({ themeType, theme }) =>
+    background-color: ${({ theme, themeType }) =>
         themeType === 'light' ? theme.light.background : theme.dark.background};
-    color: ${({ themeType, theme }) =>
+    color: ${({ theme, themeType }) =>
         themeType === 'light' ? theme.light.fontColor : theme.dark.fontColor};
     display: flex;
     justify-content: space-between;
@@ -34,10 +34,10 @@ const Nav = styled.nav`
     }
     .icon:hover {
         background-color: hsl(0, 0%, 90%);
-        background-color: ${({ themeType, theme }) =>
+        background-color: ${({ theme, themeType }) =>
             themeType === 'light'
                 ? 'hsl(0, 0%, 90%)'
-                : theme.dark.hoverBackgoundColor};
+                : theme.dark.nav.hover.BackgoundColor};
 
         cursor: pointer;
     }
@@ -56,7 +56,7 @@ const Nav = styled.nav`
     .logo > .logo-name {
         font-size: 1.35rem;
         margin: 5px;
-        color: ${({ themeType, theme }) =>
+        color: ${({ theme, themeType }) =>
             themeType === 'light' ? 'hsl(0, 0%, 30%)' : theme.dark.fontColor};
     }
 
@@ -74,15 +74,15 @@ const Nav = styled.nav`
         opacity: 0.8;
     }
     .search-box {
-        background-color: ${({ themeType, theme }) =>
+        background-color: ${({ theme, themeType }) =>
             themeType === 'light'
                 ? 'hsl(0, 0%, 95%)'
-                : theme.dark.searchBoxBackground};
+                : theme.dark.nav.searchBoxBackground};
         padding: 14px 50px;
         border: 1px;
         border-radius: 10px;
         width: 90%;
-        color: ${({ themeType, theme }) =>
+        color: ${({ theme, themeType }) =>
             themeType === 'light' ? 'hsl(0, 0%, 40%)' : theme.dark.fontColor};
     }
     .search-box:focus {
@@ -90,7 +90,7 @@ const Nav = styled.nav`
             ${({ themeType }) =>
                 themeType === 'light' ? 'lightgray' : 'hsl(0, 0%, 20%)'};
 
-        color: ${({ themeType, theme }) =>
+        color: ${({ theme, themeType }) =>
             themeType === 'light' ? 'hsl(0, 0%, 20%)' : theme.dark.fontColor};
     }
 
