@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 
 const Nav = styled.nav`
-    background-color: #fff;
+    background-color: ${({ themeType, theme }) =>
+        themeType === 'light' ? theme.light.background : theme.dark.background};
+    color: ${({ themeType, theme }) =>
+        themeType === 'light' ? theme.light.fontColor : theme.dark.fontColor};
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,6 +34,11 @@ const Nav = styled.nav`
     }
     .icon:hover {
         background-color: hsl(0, 0%, 90%);
+        background-color: ${({ themeType, theme }) =>
+            themeType === 'light'
+                ? 'hsl(0, 0%, 90%)'
+                : theme.dark.hoverBackgoundColor};
+
         cursor: pointer;
     }
     /* logo */
@@ -48,7 +56,8 @@ const Nav = styled.nav`
     .logo > .logo-name {
         font-size: 1.35rem;
         margin: 5px;
-        opacity: 0.7;
+        color: ${({ themeType, theme }) =>
+            themeType === 'light' ? 'hsl(0, 0%, 30%)' : theme.dark.fontColor};
     }
 
     /* search bar */
@@ -65,16 +74,24 @@ const Nav = styled.nav`
         opacity: 0.8;
     }
     .search-box {
-        background-color: hsl(0, 0%, 95%);
+        background-color: ${({ themeType, theme }) =>
+            themeType === 'light'
+                ? 'hsl(0, 0%, 95%)'
+                : theme.dark.searchBoxBackground};
         padding: 14px 50px;
         border: 1px;
         border-radius: 10px;
         width: 90%;
-        color: hsl(0, 0%, 40%);
+        color: ${({ themeType, theme }) =>
+            themeType === 'light' ? 'hsl(0, 0%, 40%)' : theme.dark.fontColor};
     }
     .search-box:focus {
-        box-shadow: 0 0 2px 2px lightgray;
-        color: hsl(0, 0%, 20%);
+        box-shadow: 0 0 2px 2px
+            ${({ themeType }) =>
+                themeType === 'light' ? 'lightgray' : 'hsl(0, 0%, 20%)'};
+
+        color: ${({ themeType, theme }) =>
+            themeType === 'light' ? 'hsl(0, 0%, 20%)' : theme.dark.fontColor};
     }
 
     /* menu */
@@ -93,12 +110,13 @@ const Nav = styled.nav`
         margin: 0 7px;
     }
     .robot {
-        background-color: hsl(194, 48%, 88%);
+        background-color: ${({ themeType }) =>
+            themeType === 'light' ? 'hsl(194, 48%, 88%)' : 'hsl(1, 48%, 25%)'};
     }
 
     /* responsive to 800px width */
 
-    @media (max-width: 800px) {
+    @media (max-width: 840px) {
         display: grid;
         grid-template-columns: 30vw 10vw 60vw;
         justify-content: center;

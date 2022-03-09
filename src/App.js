@@ -1,21 +1,33 @@
 import { useState } from 'react';
 import './app.css';
 import styled from 'styled-components';
+import { ThemeProvider } from 'styled-components';
+import theme from './components/theme/Themes';
 import Navbar from './components/Nav';
 import SideBar from './components/SideBar';
 import Main from './components/Main';
 
 const App = () => {
+    const [themeType, setThemeType] = useState('light');
     const [openModal, setOpen] = useState(false);
 
+    const themeToggler = () => {
+        themeType === 'light' ? setThemeType('dark') : setThemeType('light');
+    };
     return (
-        <>
-            <Navbar />
-            <Container>
-                <SideBar />
-                <Main openModal={openModal} setOpen={setOpen} />
-            </Container>
-        </>
+        <ThemeProvider theme={theme} themeType={themeType}>
+            <>
+                <Navbar themeToggler={themeToggler} themeType={themeType} />
+                <Container>
+                    <SideBar themeType={themeType} />
+                    <Main
+                        openModal={openModal}
+                        setOpen={setOpen}
+                        themeType={themeType}
+                    />
+                </Container>
+            </>
+        </ThemeProvider>
     );
 };
 

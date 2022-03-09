@@ -4,12 +4,12 @@ import imgLogo from './assets/keep_logo.png';
 import { FiMenu } from 'react-icons/fi';
 import { AiOutlineSearch, AiOutlineSetting } from 'react-icons/ai';
 import { TiThMenuOutline } from 'react-icons/ti';
-import { CgMenuGridO } from 'react-icons/cg';
+import { CgDarkMode } from 'react-icons/cg';
 import { SiRobotframework } from 'react-icons/si';
 
-const Navbar = () => {
+const Navbar = ({ themeType, themeToggler }) => {
     return (
-        <Nav>
+        <Nav themeType={themeType}>
             <div className='logo'>
                 <span className='menu-icon icon'>
                     <FiMenu />
@@ -42,8 +42,8 @@ const Navbar = () => {
                 </div>
 
                 <div>
-                    <span className='icon'>
-                        <CgMenuGridO />
+                    <span className='icon' onClick={themeToggler}>
+                        <CgDarkMode />
                     </span>
                     <span className='robot icon'>
                         <SiRobotframework />
