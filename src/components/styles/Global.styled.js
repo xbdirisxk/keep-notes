@@ -1,8 +1,6 @@
 import * as styled from 'styled-components';
 
 const GlobalStyles = styled.createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
-
     *,
     *::before,
     *::after {
@@ -54,7 +52,11 @@ const GlobalStyles = styled.createGlobalStyle`
     /* ============
        Modal styles
        ============ */
-
+    .css-1k9ek97 {
+        background-color: ${({ theme, themeType }) =>
+            themeType === 'light' ? '#fff' : theme.dark.background} !important;
+        border: 2px solid #fff !important;
+    }
     .modal-box {
         position: absolute;
         top: 50%;
@@ -88,7 +90,10 @@ const GlobalStyles = styled.createGlobalStyle`
         transition: 0.2s;
     }
     .modal-box > .icons > *:hover {
-        background-color: hsl(56, 45%, 80%);
+        background-color: ${({ theme, themeType }) =>
+            themeType === 'light'
+                ? 'hsl(56, 45%, 80%)'
+                : theme.dark.icons.hover.backgroundColor};
         cursor: default;
     }
 

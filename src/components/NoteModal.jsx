@@ -7,7 +7,7 @@ import { MdOutlineDeleteForever, MdOutlineColorLens } from 'react-icons/md';
 import { BiBellPlus, BiArchiveOut } from 'react-icons/bi';
 import { IoMdMore } from 'react-icons/io';
 
-const NoteModal = ({ open, setOpen, modal, handleDelete }) => {
+const NoteModal = ({ open, setOpen, modal, handleDelete, themeType }) => {
     const handleClose = () => setOpen(false);
 
     return (

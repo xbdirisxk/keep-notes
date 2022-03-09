@@ -33,11 +33,10 @@ const Nav = styled.nav`
         transition: 0.2s;
     }
     .icon:hover {
-        background-color: hsl(0, 0%, 90%);
         background-color: ${({ theme, themeType }) =>
             themeType === 'light'
                 ? 'hsl(0, 0%, 90%)'
-                : theme.dark.nav.hover.BackgoundColor};
+                : theme.dark.icons.hover.backgroundColor};
 
         cursor: pointer;
     }

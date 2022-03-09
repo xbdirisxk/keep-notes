@@ -38,6 +38,7 @@ const GridNotes = ({ notes, ...props }) => {
                             note={note}
                             handleOpen={handleOpen}
                             handleDelete={handleDelete}
+                            themeType={props.themeType}
                         />
                     ))}
                 </Masonry>
@@ -53,6 +54,7 @@ const GridNotes = ({ notes, ...props }) => {
                 setOpen={props.setOpen}
                 modal={props.modal}
                 handleDelete={handleDelete}
+                themeType={props.themeType}
             />
         </>
     );

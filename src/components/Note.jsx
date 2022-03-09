@@ -4,9 +4,9 @@ import { MdOutlineDeleteForever, MdOutlineColorLens } from 'react-icons/md';
 import { BiBellPlus, BiArchiveOut } from 'react-icons/bi';
 import { IoMdMore } from 'react-icons/io';
 
-const Note = ({ note, handleOpen, handleDelete }) => {
+const Note = ({ note, themeType, handleOpen, handleDelete }) => {
     return (
-        <NoteItem className='note-box'>
+        <NoteItem className='note-box' themeType={themeType}>
             <div onClick={() => handleOpen(note.id)} className='content'>
                 <h3>{note.title}</h3>
                 <p>{note.body}</p>
@@ -70,7 +70,11 @@ const NoteItem = styled.div`
         transition: 0.2s;
     }
     .icons > *:hover {
-        background-color: hsl(56, 45%, 80%);
+        background-color: ${({ theme, themeType }) =>
+            themeType === 'light'
+                ? 'hsl(56, 45%, 80%)'
+                : theme.dark.icons.hover.backgroundColor};
+
         cursor: pointer;
     }
 
