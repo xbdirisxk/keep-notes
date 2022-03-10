@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './app.css';
-import styled from 'styled-components';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from './styles/Global.styled';
 import theme from './theme/Themes';
@@ -11,7 +10,6 @@ import { NotesProvider } from './states/NotesProvider';
 
 const App = () => {
     const [themeType, setThemeType] = useState('light');
-    const [openModal, setOpen] = useState(false);
 
     const themeToggler = () => {
         themeType === 'light' ? setThemeType('dark') : setThemeType('light');
@@ -24,11 +22,7 @@ const App = () => {
                 <div className='container'>
                     <NotesProvider>
                         <SideBar themeType={themeType} />
-                        <Main
-                            openModal={openModal}
-                            setOpen={setOpen}
-                            themeType={themeType}
-                        />
+                        <Main themeType={themeType} />
                     </NotesProvider>
                 </div>
             </>
