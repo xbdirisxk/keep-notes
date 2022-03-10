@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import MainContent from './styles/MainContent.styled';
+import MainContent from '../styles/MainContent.styled';
 import InputNoteField from './InputNoteField';
 import GridNotes from './GridNotes';
 

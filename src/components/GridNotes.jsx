@@ -3,7 +3,7 @@ import NoteModal from './NoteModal';
 import Note from './Note';
 import styled from 'styled-components';
 import Masonry from 'react-masonry-css';
-import emptyNotesIcon from './assets/add_notes_undraw.svg';
+import emptyNotesImg from '../assets/add_notes_undraw.svg';
 
 const GridNotes = ({ notes, ...props }) => {
     const handleOpen = (id) => {
@@ -44,7 +44,7 @@ const GridNotes = ({ notes, ...props }) => {
                 </Masonry>
             ) : (
                 <Image
-                    src={emptyNotesIcon}
+                    src={emptyNotesImg}
                     alt='add notes'
                     className='empty-notes-image'
                 />

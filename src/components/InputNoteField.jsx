@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import InputContainer from './styles/InputField.styled';
+import InputContainer from '../styles/InputField.styled';
 
 const AddNoteField = ({ notes, setNotes, themeType }) => {
     const [title, setTitle] = useState('');

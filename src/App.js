@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './app.css';
 import styled from 'styled-components';
 import { ThemeProvider } from 'styled-components';
-import GlobalStyles from './components/styles/Global.styled';
-import theme from './components/theme/Themes';
+import GlobalStyles from './styles/Global.styled';
+import theme from './theme/Themes';
 import Navbar from './components/Nav';
 import SideBar from './components/SideBar';
 import Main from './components/Main';

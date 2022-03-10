@@ -1,6 +1,6 @@
 import React from 'react';
-import Nav from './styles/Nav.styled';
-import imgLogo from './assets/keep_logo.png';
+import Nav from '../styles/Nav.styled';
+import LogoImg from '../assets/keep_logo.png';
 import { FiMenu } from 'react-icons/fi';
 import { AiOutlineSearch, AiOutlineSetting } from 'react-icons/ai';
 import { TiThMenuOutline } from 'react-icons/ti';
@@ -15,7 +15,7 @@ const Navbar = ({ themeType, themeToggler }) => {
                     <FiMenu />
                 </span>
                 <img
-                    src={imgLogo}
+                    src={LogoImg}
                     alt='logo'
                     style={{ width: 40, height: 40 }}
                 />
