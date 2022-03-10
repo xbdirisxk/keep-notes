@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { NotesContext } from '../states/NotesProvider';
 import InputContainer from '../styles/InputField.styled';
 
-const AddNoteField = ({ notes, setNotes, themeType }) => {
+const AddNoteField = ({ themeType }) => {
+    const [notes, setNotes] = useContext(NotesContext);
+
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
 

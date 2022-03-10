@@ -18,6 +18,11 @@ const GlobalStyles = styled.createGlobalStyle`
         font-size: 1rem;
     }
 
+    .container {
+        display: grid;
+        grid-template-columns: 21vw 79vw;
+    }
+
     a {
         text-decoration: none;
     }

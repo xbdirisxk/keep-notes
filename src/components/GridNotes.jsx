@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import NoteModal from './NoteModal';
 import Note from './Note';
+import { NotesContext } from '../states/NotesProvider';
 import styled from 'styled-components';
 import Masonry from 'react-masonry-css';
 import emptyNotesImg from '../assets/add_notes_undraw.svg';
 
-const GridNotes = ({ notes, ...props }) => {
+const GridNotes = (props) => {
+    const [notes, setNotes] = useContext(NotesContext);
+
     const handleOpen = (id) => {
         const note = notes.filter((note) => note.id === id)[0];
         props.setModal(note);
@@ -14,7 +17,7 @@ const GridNotes = ({ notes, ...props }) => {
 
     const handleDelete = (id) => {
         const newNotes = notes.filter((note) => note.id !== id);
-        props.setNotes(newNotes);
+        setNotes(newNotes);
         props.setOpen(false);
     };
 

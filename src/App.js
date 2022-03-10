@@ -7,6 +7,7 @@ import theme from './theme/Themes';
 import Navbar from './components/Nav';
 import SideBar from './components/SideBar';
 import Main from './components/Main';
+import { NotesProvider } from './states/NotesProvider';
 
 const App = () => {
     const [themeType, setThemeType] = useState('light');
@@ -20,21 +21,19 @@ const App = () => {
             <>
                 <GlobalStyles themeType={themeType} />
                 <Navbar themeToggler={themeToggler} themeType={themeType} />
-                <Container>
-                    <SideBar themeType={themeType} />
-                    <Main
-                        openModal={openModal}
-                        setOpen={setOpen}
-                        themeType={themeType}
-                    />
-                </Container>
+                <div className='container'>
+                    <NotesProvider>
+                        <SideBar themeType={themeType} />
+                        <Main
+                            openModal={openModal}
+                            setOpen={setOpen}
+                            themeType={themeType}
+                        />
+                    </NotesProvider>
+                </div>
             </>
         </ThemeProvider>
     );
 };
 
-const Container = styled.div`
-    display: grid;
-    grid-template-columns: 21vw 79vw;
-`;
 export default App;
