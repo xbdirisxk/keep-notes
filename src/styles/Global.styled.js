@@ -1,6 +1,6 @@
 import * as styled from 'styled-components';
 
-const GlobalStyles = styled.createGlobalStyle`
+const GlobalStyle = styled.createGlobalStyle`
     *,
     *::before,
     *::after {
@@ -109,4 +109,4 @@ const GlobalStyles = styled.createGlobalStyle`
     }
 `;
 
-export default GlobalStyles;
+export default GlobalStyle;
