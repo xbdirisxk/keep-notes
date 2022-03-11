@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import Note from './Note';
 import NoteModal from './Modal';
-import { NotesContext } from '../states/NotesProvider';
+import { NotesContext } from '../state/NotesProvider';
 import styled from 'styled-components';
 import Masonry from 'react-masonry-css';
 import emptyNotesImg from '../assets/add_notes_undraw.svg';

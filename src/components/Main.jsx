@@ -4,6 +4,7 @@ import MainContent from '../styles/MainContent.styled';
 import InputNoteField from './InputField';
 import GridNotes from './GridNotes';
 import ArchiveNotes from './Archive';
+import Trash from './Trash';
 
 const Main = () => {
     return (
@@ -18,14 +19,8 @@ const Main = () => {
                     </MainContent>
                 }
             />
-            <Route
-                path='/archive'
-                element={
-                    <MainContent>
-                        <ArchiveNotes />
-                    </MainContent>
-                }
-            />
+            <Route path='/archive' element={<ArchiveNotes />} />
+            <Route path='/trash' element={<Trash />} />
         </Routes>
     );
 };
