@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Nav from '../styles/Nav.styled';
 import LogoImg from '../assets/keep_logo.png';
 import { FiMenu } from 'react-icons/fi';
@@ -6,8 +6,14 @@ import { AiOutlineSearch, AiOutlineSetting } from 'react-icons/ai';
 import { TiThMenuOutline } from 'react-icons/ti';
 import { CgDarkMode } from 'react-icons/cg';
 import { SiRobotframework } from 'react-icons/si';
+import { ThemeContext } from '../App';
 
-const Navbar = ({ themeType, themeToggler }) => {
+const Navbar = () => {
+    const [themeType, setThemeType] = useContext(ThemeContext);
+
+    const themeToggler = () => {
+        themeType === 'light' ? setThemeType('dark') : setThemeType('light');
+    };
     return (
         <Nav themeType={themeType}>
             <div className='logo'>

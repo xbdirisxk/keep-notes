@@ -11,10 +11,10 @@
 -   view notes in modal
 -   delete notes
 -   responsive grid
+-   dark mode :sparkler: / :high_brightness:
 
 ### upcoming features
 
--   dark mode :sparkler: / :high_brightness:
 -   archive note
 -   coloring background note :art:
 -   instead of deleting move to trash :recycle:
@@ -25,9 +25,14 @@
 
 ## Development
 
-## framerwork
+### framerwork
 
 -   React
+
+### build with
+
+-   context API
+-   react router
 
 ## library, extention and Tools
 

@@ -1,12 +1,14 @@
 import React, { useState, useContext } from 'react';
 import { NotesContext } from '../states/NotesProvider';
 import InputContainer from '../styles/InputField.styled';
+import { ThemeContext } from '../App';
 
-const AddNoteField = ({ themeType }) => {
-    const [notes, setNotes] = useContext(NotesContext);
-
+const AddNoteField = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
+
+    const [notes, setNotes] = useContext(NotesContext);
+    const [themeType] = useContext(ThemeContext);
 
     const handleAdd = (event) => {
         event.preventDefault();

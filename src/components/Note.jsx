@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { MdOutlineDeleteForever, MdOutlineColorLens } from 'react-icons/md';
 import { BiBellPlus, BiArchiveOut } from 'react-icons/bi';
 import { IoMdMore } from 'react-icons/io';
+import { ThemeContext } from '../App';
 
-const Note = ({ note, themeType, handleOpen, handleDelete }) => {
+const Note = ({ note, handleOpen, handleDelete }) => {
+    const [themeType] = useContext(ThemeContext);
+
     return (
         <NoteItem className='note-box' themeType={themeType}>
             <div onClick={() => handleOpen(note.id)} className='content'>
@@ -13,13 +16,14 @@ const Note = ({ note, themeType, handleOpen, handleDelete }) => {
             </div>
             <div className='icons'>
                 <span>
-                    <BiArchiveOut />
+                    <BiBellPlus />
                 </span>
                 <span>
                     <MdOutlineColorLens />
                 </span>
+
                 <span>
-                    <BiBellPlus />
+                    <BiArchiveOut />
                 </span>
                 <span onClick={() => handleDelete(note.id)}>
                     <MdOutlineDeleteForever />

@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from '../App';
 import SidebarContainer from '../styles/Sidebar.styled';
 import { MdLightbulbOutline } from 'react-icons/md';
 import { AiOutlineBell } from 'react-icons/ai';
 import { BiPencil, BiArchiveIn } from 'react-icons/bi';
 import { BsTrash } from 'react-icons/bs';
 
-const SideBar = ({ themeType }) => {
+const SideBar = () => {
+    const [themeType] = useContext(ThemeContext);
     return (
         <SidebarContainer themeType={themeType}>
             <div>

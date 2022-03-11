@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import Masonry from 'react-masonry-css';
 import emptyNotesImg from '../assets/add_notes_undraw.svg';
 
-const GridNotes = (props) => {
+const GridNotes = () => {
     const [open, setOpen] = useState(false);
     const [modal, setModal] = useState(null);
     const [notes, setNotes] = useContext(NotesContext);
@@ -20,7 +20,7 @@ const GridNotes = (props) => {
     const handleDelete = (id) => {
         const newNotes = notes.filter((note) => note.id !== id);
         setNotes(newNotes);
-        props.setOpen(false);
+        setOpen(false);
     };
 
     const breakpointColumnsObj = {
@@ -43,7 +43,6 @@ const GridNotes = (props) => {
                             note={note}
                             handleOpen={handleOpen}
                             handleDelete={handleDelete}
-                            themeType={props.themeType}
                         />
                     ))}
                 </Masonry>
@@ -59,7 +58,6 @@ const GridNotes = (props) => {
                 setOpen={setOpen}
                 modal={modal}
                 handleDelete={handleDelete}
-                themeType={props.themeType}
             />
         </>
     );
