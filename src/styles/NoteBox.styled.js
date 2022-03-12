@@ -50,6 +50,12 @@ const NoteBox = styled.div`
 
         cursor: pointer;
     }
+    .icons > .delete-icon:hover {
+        background-color: ${({ theme, themeType }) =>
+            themeType === 'light'
+                ? 'hsl(1, 95%, 88%)'
+                : theme.dark.icons.hover.backgroundColor};
+    }
 
     /* responsice */
     @media (max-width: 750px) {

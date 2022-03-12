@@ -18,10 +18,10 @@ const Trash = () => {
                         <p>{note.body}</p>
                     </div>
                     <div className='icons'>
-                        <span className='icon'>
+                        <span>
                             <MdRestoreFromTrash />
                         </span>
-                        <span className='icon'>
+                        <span className='delete-icon'>
                             <MdOutlineDeleteForever />
                         </span>
                     </div>

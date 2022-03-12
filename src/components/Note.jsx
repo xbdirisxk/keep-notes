@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import styled from 'styled-components';
 import NoteBox from '../styles/NoteBox.styled';
 import { MdOutlineColorLens } from 'react-icons/md';
 import { BiBellPlus, BiArchiveOut } from 'react-icons/bi';
@@ -27,7 +26,10 @@ const Note = ({ note, handleOpen, handleDelete }) => {
                 <span>
                     <BiArchiveOut />
                 </span>
-                <span onClick={() => handleDelete(note.id)}>
+                <span
+                    className='delete-icon'
+                    onClick={() => handleDelete(note.id)}
+                >
                     <IoTrashOutline />
                 </span>
                 <span>
@@ -38,28 +40,4 @@ const Note = ({ note, handleOpen, handleDelete }) => {
     );
 };
 
-const Icons = styled.div`
-    /* display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    padding: 0 0 3px;
-    font-size: 1.2rem;
-    margin-right: 5px;
-
-    & > * {
-        margin-left: 10px;
-        padding: 2px;
-        border-radius: 30px;
-        padding: 6px 6px 1px;
-        transition: 0.2s;
-    }
-    & > *:hover {
-        background-color: ${({ theme, themeType }) =>
-        themeType === 'light'
-            ? 'hsl(56, 45%, 80%)'
-            : theme.dark.icons.hover.backgroundColor};
-
-        cursor: pointer;
-    } */
-`;
 export default Note;

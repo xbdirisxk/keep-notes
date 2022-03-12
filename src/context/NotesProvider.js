@@ -63,7 +63,13 @@ export const ArchiveNoteProvider = (props) => {
 const TrashContext = createContext([]);
 
 export const TrashNoteProvider = (props) => {
-    const [trashNotes, setTrashNotes] = useState([]);
+    const [trashNotes, setTrashNotes] = useState([
+        {
+            id: 10,
+            title: 'fact',
+            body: 'The world’s oldest wooden wheel has been around for more than 5,000 years',
+        },
+    ]);
     return (
         <TrashContext.Provider value={[trashNotes, setTrashNotes]}>
             {props.children}

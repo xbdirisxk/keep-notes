@@ -19,10 +19,10 @@ const ArchiveNotes = () => {
                         <p>{note.body}</p>
                     </div>
                     <div className='icons'>
-                        <span className='icon'>
+                        <span>
                             <MdOutlineUnarchive />
                         </span>
-                        <span className='icon'>
+                        <span className='delete-icon'>
                             <IoTrashOutline />
                         </span>
                     </div>
