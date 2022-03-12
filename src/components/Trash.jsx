@@ -1,28 +1,45 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { TrashContext } from '../context/NotesProvider';
+import { TrashContext, NotesContext } from '../context/NotesProvider';
 import NoteBox from '../styles/NoteBox.styled';
 import { ThemeContext } from '../App';
-import { MdOutlineDeleteForever, MdRestoreFromTrash } from 'react-icons/md';
+import { FaTrashRestore } from 'react-icons/fa';
+import { RiDeleteBin2Fill } from 'react-icons/ri';
 
 const Trash = () => {
-    const [trashNotes] = useContext(TrashContext);
     const [themeType] = useContext(ThemeContext);
+    const [trashNote, setTrashNote] = useContext(TrashContext);
+    const [notes, setNotes] = useContext(NotesContext);
+
+    const restoreNote = (id) => {
+        const item = trashNote.filter((note) => note.id === id)[0];
+        const updateTrash = trashNote.filter((note) => note.id !== id);
+        setTrashNote(updateTrash);
+        setNotes([...notes, item]);
+        setTrashNote(updateTrash);
+    };
+
+    const deleteForEver = (id) => {
+        const updateTrash = trashNote.filter((note) => note.id !== id);
+        setTrashNote(updateTrash);
+    };
 
     return (
         <Grid themeType={themeType}>
-            {trashNotes.map((note) => (
+            {trashNote.map((note) => (
                 <NoteBox key={note.id} className='item' themeType={themeType}>
                     <div className='content'>
                         <h4>{note.title}</h4>
                         <p>{note.body}</p>
                     </div>
                     <div className='icons'>
-                        <span>
-                            <MdRestoreFromTrash />
+                        <span onClick={() => restoreNote(note.id)}>
+                            <FaTrashRestore />
                         </span>
                         <span className='delete-icon'>
-                            <MdOutlineDeleteForever />
+                            <RiDeleteBin2Fill
+                                onClick={() => deleteForEver(note.id)}
+                            />
                         </span>
                     </div>
                 </NoteBox>
@@ -36,6 +53,9 @@ const Grid = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    .icons {
+        font-size: 1.4rem;
+    }
 `;
 
 export default Trash;
