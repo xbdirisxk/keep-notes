@@ -5,11 +5,15 @@ import { NotesContext } from '../context/NotesProvider';
 import styled from 'styled-components';
 import Masonry from 'react-masonry-css';
 import emptyNotesImg from '../assets/add_notes_undraw.svg';
+import { ArchiveContext, TrashContext } from '../context/NotesProvider';
 
 const GridNotes = () => {
     const [open, setOpen] = useState(false);
     const [modal, setModal] = useState(null);
+
     const [notes, setNotes] = useContext(NotesContext);
+    const [archiveNote, setArchiveNote] = useContext(ArchiveContext);
+    const [trashNote, setTrashNote] = useContext(TrashContext);
 
     const handleOpen = (id) => {
         const note = notes.filter((note) => note.id === id)[0];
@@ -18,6 +22,7 @@ const GridNotes = () => {
     };
 
     const handleDelete = (id) => {
+        // get the item first
         const newNotes = notes.filter((note) => note.id !== id);
         setNotes(newNotes);
         setOpen(false);

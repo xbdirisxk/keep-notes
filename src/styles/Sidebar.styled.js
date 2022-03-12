@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 const SidebarContainer = styled.div`
     background-color: ${({ theme, themeType }) =>
-        themeType === 'light' ? '#fff' : theme.dark.background};
+        themeType === 'dark' ? theme.dark.background : '#fff'};
     color: ${({ theme, themeType }) =>
-        themeType === 'light' ? '#000' : theme.dark.fontColor};
+        themeType === 'dark' ? theme.dark.fontColor : '#000'};
     display: flex;
     flex-direction: column;
     padding: 5px 0;
@@ -22,18 +22,25 @@ const SidebarContainer = styled.div`
         cursor: pointer;
         transition: 0.2s;
     }
-    .menu-item:first-child {
+    .menu-item:hover {
         background-color: ${({ theme, themeType }) =>
-            themeType === 'light'
-                ? '#feefc3'
-                : theme.dark.sidebar.selectedItemBackground};
+            themeType === 'dark'
+                ? theme.dark.sidebar.hover.backgroundColor
+                : 'hsl(0, 0%, 90%)'};
         border-radius: 0 30px 30px 0;
     }
-    .menu-item:nth-child(1n + 2):hover {
+    .active {
         background-color: ${({ theme, themeType }) =>
-            themeType === 'light'
-                ? 'hsl(0, 0%, 90%)'
-                : theme.dark.sidebar.hover.backgroundColor};
+            themeType === 'dark'
+                ? theme.dark.sidebar.selectedItemBackground
+                : '#feefc3'};
+        border-radius: 0 30px 30px 0;
+    }
+    .active:hover {
+        background-color: ${({ theme, themeType }) =>
+            themeType === 'dark'
+                ? theme.dark.sidebar.selectedItemBackground
+                : '#feefc3'};
         border-radius: 0 30px 30px 0;
     }
 
