@@ -9,8 +9,8 @@ import { NotesContext, TrashContext } from '../context/NotesProvider';
 
 const ArchiveNotes = () => {
     const [themeType] = useContext(ThemeContext);
-    const [archiveNote, setArchiveNote] = useContext(ArchiveContext);
     const [notes, setNotes] = useContext(NotesContext);
+    const [archiveNote, setArchiveNote] = useContext(ArchiveContext);
     const [trashNote, setTrashNote] = useContext(TrashContext);
 
     const unArchive = (id) => {
@@ -21,33 +21,37 @@ const ArchiveNotes = () => {
     };
 
     const moveToTrash = (id) => {
-        console.log('note:', notes);
-        const item = notes.filter((note) => note.id === id)[0];
-        const updateNotes = notes.filter((note) => note.id !== id);
-        setNotes(updateNotes);
+        const item = archiveNote.filter((note) => note.id === id)[0];
+        const updateArchive = archiveNote.filter((note) => note.id !== id);
+        setArchiveNote(updateArchive);
         setTrashNote([...trashNote, item]);
     };
     return (
         <Grid themeType={themeType}>
-            {archiveNote.map((note) => (
-                <NoteBox key={note.id} className='item' themeType={themeType}>
-                    <div className='content'>
-                        <h4>{note.title}</h4>
-                        <p>{note.body}</p>
-                    </div>
-                    <div className='icons' onClick={() => unArchive(note.id)}>
-                        <span>
-                            <MdOutlineUnarchive />
-                        </span>
-                        <span
-                            className='delete-icon'
-                            onClick={() => moveToTrash(note.id)}
-                        >
-                            <IoTrashOutline />
-                        </span>
-                    </div>
-                </NoteBox>
-            ))}
+            {archiveNote.length &&
+                archiveNote.map((note) => (
+                    <NoteBox
+                        key={note.id}
+                        className='item'
+                        themeType={themeType}
+                    >
+                        <div className='content'>
+                            <h4>{note.title}</h4>
+                            <p>{note.body}</p>
+                        </div>
+                        <div className='icons'>
+                            <span onClick={() => unArchive(note.id)}>
+                                <MdOutlineUnarchive />
+                            </span>
+                            <span
+                                className='delete-icon'
+                                onClick={() => moveToTrash(note.id)}
+                            >
+                                <IoTrashOutline />
+                            </span>
+                        </div>
+                    </NoteBox>
+                ))}
         </Grid>
     );
 };
