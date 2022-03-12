@@ -19,7 +19,6 @@ const SidebarContainer = styled.div`
         justify-content: flex-start;
         align-items: center;
         padding: 2px;
-        color: #000;
         cursor: pointer;
         transition: 0.2s;
     }

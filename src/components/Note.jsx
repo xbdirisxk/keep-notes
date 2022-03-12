@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { MdOutlineDeleteForever, MdOutlineColorLens } from 'react-icons/md';
+import { MdOutlineColorLens } from 'react-icons/md';
 import { BiBellPlus, BiArchiveOut } from 'react-icons/bi';
 import { IoMdMore } from 'react-icons/io';
+import { IoTrashOutline } from 'react-icons/io5';
 import { ThemeContext } from '../App';
 
 const Note = ({ note, handleOpen, handleDelete }) => {
@@ -26,7 +27,7 @@ const Note = ({ note, handleOpen, handleDelete }) => {
                     <BiArchiveOut />
                 </span>
                 <span onClick={() => handleDelete(note.id)}>
-                    <MdOutlineDeleteForever />
+                    <IoTrashOutline />
                 </span>
                 <span>
                     <IoMdMore />

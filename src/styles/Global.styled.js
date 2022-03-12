@@ -24,6 +24,7 @@ const GlobalStyle = styled.createGlobalStyle`
     }
 
     a {
+        color: inherit;
         text-decoration: none;
     }
     img {
