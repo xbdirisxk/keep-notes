@@ -1,17 +1,23 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
+import NoteBox from '../styles/NoteBox.styled';
 import { ArchiveContext } from '../context/NotesProvider';
 import { MdOutlineUnarchive } from 'react-icons/md';
 import { IoTrashOutline } from 'react-icons/io5';
+import { ThemeContext } from '../App';
 
 const ArchiveNotes = () => {
-    const [archiveNote, setArchiveNote] = useContext(ArchiveContext);
+    const [archiveNote] = useContext(ArchiveContext);
+    const [themeType] = useContext(ThemeContext);
+
     return (
-        <Grid>
+        <Grid themeType={themeType}>
             {archiveNote.map((note) => (
-                <div key={note.id} className='item'>
-                    <h4>{note.title}</h4>
-                    <p>{note.body}</p>
+                <NoteBox key={note.id} className='item' themeType={themeType}>
+                    <div className='content'>
+                        <h4>{note.title}</h4>
+                        <p>{note.body}</p>
+                    </div>
                     <div className='icons'>
                         <span className='icon'>
                             <MdOutlineUnarchive />
@@ -20,7 +26,7 @@ const ArchiveNotes = () => {
                             <IoTrashOutline />
                         </span>
                     </div>
-                </div>
+                </NoteBox>
             ))}
         </Grid>
     );
@@ -31,18 +37,5 @@ const Grid = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-
-    .item {
-        border: 2px solid gray;
-        border-radius: 10px;
-        padding: 5px 10px 0;
-        margin: 10px;
-        width: 200px;
-    }
-
-    .item > .icons {
-        padding: 10px 0 0;
-        font-size: 1.4rem;
-    }
 `;
 export default ArchiveNotes;
