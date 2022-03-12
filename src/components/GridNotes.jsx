@@ -21,10 +21,11 @@ const GridNotes = () => {
         setOpen(true);
     };
 
-    const handleDelete = (id) => {
-        // get the item first
+    const moveToTrash = (id) => {
+        const item = notes.filter((note) => note.id === id)[0];
         const newNotes = notes.filter((note) => note.id !== id);
         setNotes(newNotes);
+        setTrashNote([...trashNote, item]);
         setOpen(false);
     };
 
@@ -47,7 +48,7 @@ const GridNotes = () => {
                             key={note.id}
                             note={note}
                             handleOpen={handleOpen}
-                            handleDelete={handleDelete}
+                            handleDelete={moveToTrash}
                         />
                     ))}
                 </Masonry>
@@ -62,7 +63,7 @@ const GridNotes = () => {
                 open={open}
                 setOpen={setOpen}
                 modal={modal}
-                handleDelete={handleDelete}
+                handleDelete={moveToTrash}
             />
         </>
     );

@@ -3,9 +3,10 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Backdrop from '@mui/material/Backdrop';
-import { MdOutlineDeleteForever, MdOutlineColorLens } from 'react-icons/md';
+import { MdOutlineColorLens } from 'react-icons/md';
 import { BiBellPlus, BiArchiveOut } from 'react-icons/bi';
 import { IoMdMore } from 'react-icons/io';
+import { IoTrashOutline } from 'react-icons/io5';
 
 const NoteModal = ({ open, setOpen, modal, handleDelete }) => {
     const handleClose = () => setOpen(false);
@@ -49,7 +50,7 @@ const NoteModal = ({ open, setOpen, modal, handleDelete }) => {
                                 <BiBellPlus />
                             </span>
                             <span onClick={() => handleDelete(modal.id)}>
-                                <MdOutlineDeleteForever />
+                                <IoTrashOutline />
                             </span>
                             <span>
                                 <IoMdMore />

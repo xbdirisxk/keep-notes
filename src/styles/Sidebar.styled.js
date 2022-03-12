@@ -29,6 +29,7 @@ const SidebarContainer = styled.div`
                 : 'hsl(0, 0%, 90%)'};
         border-radius: 0 30px 30px 0;
     }
+    /* selected menu item */
     .active {
         background-color: ${({ theme, themeType }) =>
             themeType === 'dark'

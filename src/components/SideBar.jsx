@@ -9,6 +9,7 @@ import { BsTrash } from 'react-icons/bs';
 
 const SideBar = () => {
     const [themeType] = useContext(ThemeContext);
+
     return (
         <SidebarContainer themeType={themeType}>
             <NavLink to='/' className='menu-item'>
