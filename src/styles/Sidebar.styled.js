@@ -14,22 +14,23 @@ const SidebarContainer = styled.div`
     height: 88vh;
     position: fixed;
 
-    div {
+    .menu-item {
         display: flex;
         justify-content: flex-start;
         align-items: center;
         padding: 2px;
+        color: #000;
         cursor: pointer;
         transition: 0.2s;
     }
-    div:first-child {
+    .menu-item:first-child {
         background-color: ${({ theme, themeType }) =>
             themeType === 'light'
                 ? '#feefc3'
                 : theme.dark.sidebar.selectedItemBackground};
         border-radius: 0 30px 30px 0;
     }
-    div:nth-child(1n + 2):hover {
+    .menu-item:nth-child(1n + 2):hover {
         background-color: ${({ theme, themeType }) =>
             themeType === 'light'
                 ? 'hsl(0, 0%, 90%)'
@@ -37,11 +38,11 @@ const SidebarContainer = styled.div`
         border-radius: 0 30px 30px 0;
     }
 
-    div > * {
+    .menu-item > * {
         margin: 12px 10px;
     }
 
-    div > .icon {
+    .menu-item > .icon {
         font-size: 1.45rem;
         margin-left: 20px;
     }
@@ -49,13 +50,13 @@ const SidebarContainer = styled.div`
     @media (max-width: 800px) {
         width: 12vw;
 
-        div {
+        .menu-item {
             padding: 0;
         }
-        div > .text {
+        .menu-item > .text {
             display: none;
         }
-        div > .icon {
+        .menu-item > .icon {
             margin-left: 15px;
         }
     }

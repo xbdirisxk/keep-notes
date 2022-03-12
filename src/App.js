@@ -4,7 +4,6 @@ import GlobalStyle from './styles/Global.styled';
 import Navbar from './components/Nav';
 import SideBar from './components/SideBar';
 import Main from './components/Main';
-import { NotesProvider } from './state/NotesProvider';
 
 const ThemeContext = createContext('light');
 const App = () => {
@@ -15,10 +14,9 @@ const App = () => {
             <GlobalStyle themeType={themeType} />
             <Navbar />
             <div className='container'>
-                <NotesProvider>
-                    <SideBar />
-                    <Main />
-                </NotesProvider>
+                <SideBar />
+
+                <Main />
             </div>
         </ThemeContext.Provider>
     );

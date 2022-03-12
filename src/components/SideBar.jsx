@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { ThemeContext } from '../App';
 import SidebarContainer from '../styles/Sidebar.styled';
 import { MdLightbulbOutline } from 'react-icons/md';
@@ -10,26 +11,26 @@ const SideBar = () => {
     const [themeType] = useContext(ThemeContext);
     return (
         <SidebarContainer themeType={themeType}>
-            <div>
+            <Link to='/' className='menu-item'>
                 <MdLightbulbOutline className='icon' />
                 <span className='text'>Notes</span>
-            </div>
-            <div>
+            </Link>
+            <Link to='/' className='menu-item'>
                 <AiOutlineBell className='icon' />
                 <span className='text'>Reminders</span>
-            </div>
-            <div>
+            </Link>
+            <Link to='/' className='menu-item'>
                 <BiPencil className='icon' />
                 <span className='text'>Edit labels</span>
-            </div>
-            <div>
+            </Link>
+            <Link to='/archive' className='menu-item'>
                 <BiArchiveIn className='icon' />
                 <span className='text'>Archive</span>
-            </div>
-            <div>
+            </Link>
+            <Link to='/trash' className='menu-item'>
                 <BsTrash className='icon' />
                 <span className='text'>Trash</span>
-            </div>
+            </Link>
         </SidebarContainer>
     );
 };

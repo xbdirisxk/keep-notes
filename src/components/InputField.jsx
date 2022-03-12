@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { NotesContext } from '../state/NotesProvider';
+import { NotesContext } from '../context/NotesProvider';
 import InputContainer from '../styles/InputField.styled';
 import { ThemeContext } from '../App';
 
