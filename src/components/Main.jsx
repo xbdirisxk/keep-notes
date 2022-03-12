@@ -5,8 +5,9 @@ import InputNoteField from './InputField';
 import GridNotes from './GridNotes';
 import ArchiveNotes from './Archive';
 import Trash from './Trash';
-import { ArchiveNoteProvider } from '../context/NotesProvider';
 import { NotesProvider } from '../context/NotesProvider';
+import { ArchiveNoteProvider } from '../context/NotesProvider';
+import { TrashNoteProvider } from '../context/NotesProvider';
 
 const Main = () => {
     return (
@@ -34,7 +35,14 @@ const Main = () => {
                             </ArchiveNoteProvider>
                         }
                     />
-                    <Route path='/trash' element={<Trash />} />
+                    <Route
+                        path='/trash'
+                        element={
+                            <TrashNoteProvider>
+                                <Trash />
+                            </TrashNoteProvider>
+                        }
+                    />
                 </Routes>
             </NotesProvider>
         </MainContent>
