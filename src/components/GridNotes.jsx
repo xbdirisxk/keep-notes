@@ -21,10 +21,18 @@ const GridNotes = () => {
         setOpen(true);
     };
 
+    const handleArchive = (id) => {
+        const item = notes.filter((note) => note.id === id)[0];
+        const updateNotes = notes.filter((note) => note.id !== id);
+        setNotes(updateNotes);
+        setArchiveNote([...archiveNote, item]);
+        setOpen(false);
+    };
+
     const moveToTrash = (id) => {
         const item = notes.filter((note) => note.id === id)[0];
-        const newNotes = notes.filter((note) => note.id !== id);
-        setNotes(newNotes);
+        const updateNotes = notes.filter((note) => note.id !== id);
+        setNotes(updateNotes);
         setTrashNote([...trashNote, item]);
         setOpen(false);
     };
@@ -48,6 +56,7 @@ const GridNotes = () => {
                             key={note.id}
                             note={note}
                             handleOpen={handleOpen}
+                            handleArchive={handleArchive}
                             handleDelete={moveToTrash}
                         />
                     ))}
@@ -63,6 +72,7 @@ const GridNotes = () => {
                 open={open}
                 setOpen={setOpen}
                 modal={modal}
+                handleArchive={handleArchive}
                 handleDelete={moveToTrash}
             />
         </>

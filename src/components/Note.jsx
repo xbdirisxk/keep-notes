@@ -6,7 +6,7 @@ import { IoMdMore } from 'react-icons/io';
 import { IoTrashOutline } from 'react-icons/io5';
 import { ThemeContext } from '../App';
 
-const Note = ({ note, handleOpen, handleDelete }) => {
+const Note = ({ note, handleOpen, handleDelete, handleArchive }) => {
     const [themeType] = useContext(ThemeContext);
 
     return (
@@ -24,7 +24,7 @@ const Note = ({ note, handleOpen, handleDelete }) => {
                 </span>
 
                 <span>
-                    <BiArchiveOut />
+                    <BiArchiveOut onClick={() => handleArchive(note.id)} />
                 </span>
                 <span
                     className='delete-icon'

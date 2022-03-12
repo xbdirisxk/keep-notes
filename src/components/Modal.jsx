@@ -8,7 +8,7 @@ import { BiBellPlus, BiArchiveOut } from 'react-icons/bi';
 import { IoMdMore } from 'react-icons/io';
 import { IoTrashOutline } from 'react-icons/io5';
 
-const NoteModal = ({ open, setOpen, modal, handleDelete }) => {
+const NoteModal = ({ open, setOpen, modal, handleDelete, handleArchive }) => {
     const handleClose = () => setOpen(false);
 
     return (
@@ -41,13 +41,16 @@ const NoteModal = ({ open, setOpen, modal, handleDelete }) => {
                         </Typography>
                         <div className='icons'>
                             <span>
-                                <BiArchiveOut />
+                                <BiBellPlus />
                             </span>
                             <span>
                                 <MdOutlineColorLens />
                             </span>
+
                             <span>
-                                <BiBellPlus />
+                                <BiArchiveOut
+                                    onClick={() => handleArchive(modal.id)}
+                                />
                             </span>
                             <span onClick={() => handleDelete(modal.id)}>
                                 <IoTrashOutline />
