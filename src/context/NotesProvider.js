@@ -34,23 +34,7 @@ export const NotesProvider = (props) => {
 const ArchiveContext = createContext([]);
 
 export const ArchiveNoteProvider = (props) => {
-    const [archiveNotes, setArchiveNotes] = useState([
-        {
-            id: 1,
-            title: 'fact',
-            body: 'The world’s oldest wooden wheel has been around for more than 5,000 years',
-        },
-        {
-            id: 10,
-            title: 'fact',
-            body: 'The world’s oldest wooden wheel has been around for more than 5,000 years',
-        },
-        {
-            id: 55,
-            title: 'fact',
-            body: 'The world’s oldest wooden wheel has been around for more than 5,000 years',
-        },
-    ]);
+    const [archiveNotes, setArchiveNotes] = useState([]);
     return (
         <ArchiveContext.Provider value={[archiveNotes, setArchiveNotes]}>
             {props.children}
@@ -63,13 +47,7 @@ export const ArchiveNoteProvider = (props) => {
 const TrashContext = createContext([]);
 
 export const TrashNoteProvider = (props) => {
-    const [trashNotes, setTrashNotes] = useState([
-        {
-            id: 10,
-            title: 'fact',
-            body: 'The world’s oldest wooden wheel has been around for more than 5,000 years',
-        },
-    ]);
+    const [trashNotes, setTrashNotes] = useState([]);
     return (
         <TrashContext.Provider value={[trashNotes, setTrashNotes]}>
             {props.children}
