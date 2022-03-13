@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/keep-notes/static/css/main.3dd66c94.css",
-    "main.js": "/keep-notes/static/js/main.d27ae485.js",
+    "main.js": "/keep-notes/static/js/main.23f75168.js",
     "static/media/add_notes_undraw.svg": "/keep-notes/static/media/add_notes_undraw.5be25dca597a21542478d1a539d1edcf.svg",
     "index.html": "/keep-notes/index.html",
-    "main.d27ae485.js.map": "/keep-notes/static/js/main.d27ae485.js.map"
+    "main.23f75168.js.map": "/keep-notes/static/js/main.23f75168.js.map"
   },
   "entrypoints": [
     "static/css/main.3dd66c94.css",
-    "static/js/main.d27ae485.js"
+    "static/js/main.23f75168.js"
   ]
 }
