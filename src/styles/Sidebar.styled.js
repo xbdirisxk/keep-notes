@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 const SidebarContainer = styled.div`
     background-color: ${({ theme, themeType }) =>
-        themeType === 'dark' ? theme.dark.background : '#fff'};
+        themeType === 'dark' ? theme.dark.background : theme.light.background};
     color: ${({ theme, themeType }) =>
-        themeType === 'dark' ? theme.dark.fontColor : '#000'};
+        themeType === 'dark' ? theme.dark.fontColor : theme.light.fontColor};
     display: flex;
     flex-direction: column;
     padding: 5px 0;
@@ -26,7 +26,7 @@ const SidebarContainer = styled.div`
         background-color: ${({ theme, themeType }) =>
             themeType === 'dark'
                 ? theme.dark.sidebar.hover.backgroundColor
-                : 'hsl(0, 0%, 90%)'};
+                : theme.light.sidebar.hover.backgroundColor};
         border-radius: 0 30px 30px 0;
     }
     /* selected menu item */
@@ -34,14 +34,14 @@ const SidebarContainer = styled.div`
         background-color: ${({ theme, themeType }) =>
             themeType === 'dark'
                 ? theme.dark.sidebar.selectedItemBackground
-                : '#feefc3'};
+                : theme.light.sidebar.selectedItemBackground};
         border-radius: 0 30px 30px 0;
     }
     .active:hover {
         background-color: ${({ theme, themeType }) =>
             themeType === 'dark'
                 ? theme.dark.sidebar.selectedItemBackground
-                : '#feefc3'};
+                : theme.light.sidebar.selectedItemBackground};
         border-radius: 0 30px 30px 0;
     }
 

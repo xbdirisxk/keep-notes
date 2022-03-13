@@ -11,9 +11,13 @@ const GlobalStyle = styled.createGlobalStyle`
 
     body {
         background-color: ${({ theme, themeType }) =>
-            themeType === 'dark' ? theme.dark.background : '#fff'};
+            themeType === 'dark'
+                ? theme.dark.background
+                : theme.light.background};
         color: ${({ theme, themeType }) =>
-            themeType === 'dark' ? theme.dark.fontColor : '#000'};
+            themeType === 'dark'
+                ? theme.dark.fontColor
+                : theme.light.fontColor};
         font-family: 'Roboto', sans-serif;
         font-size: 1rem;
     }
@@ -60,7 +64,9 @@ const GlobalStyle = styled.createGlobalStyle`
        ============ */
     .css-1k9ek97 {
         background-color: ${({ theme, themeType }) =>
-            themeType === 'dark' ? theme.dark.background : '#fff'} !important;
+            themeType === 'dark'
+                ? theme.dark.background
+                : theme.light.background} !important;
         border: 2px solid #fff !important;
     }
     .modal-box {
@@ -99,7 +105,7 @@ const GlobalStyle = styled.createGlobalStyle`
         background-color: ${({ theme, themeType }) =>
             themeType === 'dark'
                 ? theme.dark.icons.hover.backgroundColor
-                : 'hsl(56, 45%, 80%)'};
+                : theme.light.noteBox.icons.hover.backgroundColor};
         cursor: default;
     }
 

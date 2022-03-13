@@ -17,30 +17,28 @@ const InputContainer = styled.div`
                     : 'lightgray'};
         padding: 5px;
         background-color: ${({ theme, themeType }) =>
-            themeType === 'dark' ? theme.dark.inputField.background : '#fff'};
+            themeType === 'dark'
+                ? theme.dark.inputField.background
+                : theme.light.background};
 
         color: ${({ theme, themeType }) =>
             themeType === 'dark' ? theme.dark.fontColor : 'hsl(0, 0%, 30%)'};
     }
 
     .input-title-field {
-        background-color: ${({ theme, themeType }) =>
-            themeType === 'dark' ? theme.dark.inputField.background : '#fff'};
-        color: ${({ theme, themeType }) =>
-            themeType === 'dark' ? theme.dark.fontColor : 'hsl(0, 0%, 30%)'};
+        background-color: inherit;
+        color: inherit;
         width: 100%;
         padding: 10px 15px;
     }
     .input-note-field {
-        background-color: ${({ theme, themeType }) =>
-            themeType === 'dark' ? theme.dark.inputField.background : '#fff'};
-        color: ${({ theme, themeType }) =>
-            themeType === 'dark' ? theme.dark.fontColor : 'hsl(0, 0%, 30%)'};
+        background-color: inherit;
+        color: inherit;
         font-size: 1rem;
         width: 100%;
         padding: 10px 15px;
     }
-    input:focus {
+    input[type='text']:focus {
         color: ${({ theme, themeType }) =>
             themeType === 'dark' ? theme.dark.fontColor : '#000'};
     }
