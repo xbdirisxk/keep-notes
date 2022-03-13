@@ -11,9 +11,9 @@ const GlobalStyle = styled.createGlobalStyle`
 
     body {
         background-color: ${({ theme, themeType }) =>
-            themeType === 'light' ? '#fff' : theme.dark.background};
+            themeType === 'dark' ? theme.dark.background : '#fff'};
         color: ${({ theme, themeType }) =>
-            themeType === 'light' ? '#000' : theme.dark.fontColor};
+            themeType === 'dark' ? theme.dark.fontColor : '#000'};
         font-family: 'Roboto', sans-serif;
         font-size: 1rem;
     }
@@ -60,7 +60,7 @@ const GlobalStyle = styled.createGlobalStyle`
        ============ */
     .css-1k9ek97 {
         background-color: ${({ theme, themeType }) =>
-            themeType === 'light' ? '#fff' : theme.dark.background} !important;
+            themeType === 'dark' ? theme.dark.background : '#fff'} !important;
         border: 2px solid #fff !important;
     }
     .modal-box {
@@ -97,9 +97,9 @@ const GlobalStyle = styled.createGlobalStyle`
     }
     .modal-box > .icons > *:hover {
         background-color: ${({ theme, themeType }) =>
-            themeType === 'light'
-                ? 'hsl(56, 45%, 80%)'
-                : theme.dark.icons.hover.backgroundColor};
+            themeType === 'dark'
+                ? theme.dark.icons.hover.backgroundColor
+                : 'hsl(56, 45%, 80%)'};
         cursor: default;
     }
 

@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 const Nav = styled.nav`
     background-color: ${({ theme, themeType }) =>
-        themeType === 'light' ? theme.light.background : theme.dark.background};
+        themeType === 'dark' ? theme.dark.background : theme.light.background};
     color: ${({ theme, themeType }) =>
-        themeType === 'light' ? theme.light.fontColor : theme.dark.fontColor};
+        themeType === 'dark' ? theme.dark.fontColor : theme.light.fontColor};
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,9 +34,9 @@ const Nav = styled.nav`
     }
     .icon:hover {
         background-color: ${({ theme, themeType }) =>
-            themeType === 'light'
-                ? 'hsl(0, 0%, 90%)'
-                : theme.dark.icons.hover.backgroundColor};
+            themeType === 'dark'
+                ? theme.dark.icons.hover.backgroundColor
+                : 'hsl(0, 0%, 90%)'};
 
         cursor: pointer;
     }
@@ -56,7 +56,7 @@ const Nav = styled.nav`
         font-size: 1.35rem;
         margin: 5px;
         color: ${({ theme, themeType }) =>
-            themeType === 'light' ? 'hsl(0, 0%, 30%)' : theme.dark.fontColor};
+            themeType === 'dark' ? theme.dark.fontColor : 'hsl(0, 0%, 30%)'};
     }
 
     /* search bar */
@@ -74,23 +74,23 @@ const Nav = styled.nav`
     }
     .search-box {
         background-color: ${({ theme, themeType }) =>
-            themeType === 'light'
-                ? 'hsl(0, 0%, 95%)'
-                : theme.dark.nav.searchBoxBackground};
+            themeType === 'dark'
+                ? theme.dark.nav.searchBoxBackground
+                : 'hsl(0, 0%, 95%)'};
         padding: 14px 50px;
         border: 1px;
         border-radius: 10px;
         width: 90%;
         color: ${({ theme, themeType }) =>
-            themeType === 'light' ? 'hsl(0, 0%, 40%)' : theme.dark.fontColor};
+            themeType === 'dark' ? theme.dark.fontColor : 'hsl(0, 0%, 40%)'};
     }
     .search-box:focus {
         box-shadow: 0 0 2px 2px
             ${({ themeType }) =>
-                themeType === 'light' ? 'lightgray' : 'hsl(0, 0%, 20%)'};
+                themeType === 'dark' ? 'hsl(0, 0%, 20%)' : 'lightgray'};
 
         color: ${({ theme, themeType }) =>
-            themeType === 'light' ? 'hsl(0, 0%, 20%)' : theme.dark.fontColor};
+            themeType === 'dark' ? theme.dark.fontColor : 'hsl(0, 0%, 20%)'};
     }
 
     /* menu */
@@ -110,10 +110,10 @@ const Nav = styled.nav`
     }
     .robot {
         background-color: ${({ themeType }) =>
-            themeType === 'light' ? 'hsl(194, 48%, 88%)' : 'hsl(1, 48%, 25%)'};
+            themeType === 'dark' ? 'hsl(1, 48%, 25%)' : 'hsl(194, 48%, 88%)'};
     }
 
-    /* responsive to 800px width */
+    /* responsive */
 
     @media (max-width: 840px) {
         display: grid;

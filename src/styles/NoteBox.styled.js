@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 const NoteBox = styled.div`
+    transition: 2s;
     background-color: ${({ theme, themeType }) =>
-        themeType === 'light' ? '#fff' : theme.dark.background};
+        themeType === 'dark' ? theme.dark.background : '#fff'};
     text-align: left;
     margin: 10px;
     line-height: 1.3rem;
@@ -44,17 +45,17 @@ const NoteBox = styled.div`
     }
     .icons > *:hover {
         background-color: ${({ theme, themeType }) =>
-            themeType === 'light'
-                ? 'hsl(56, 45%, 80%)'
-                : theme.dark.icons.hover.backgroundColor};
+            themeType === 'dark'
+                ? theme.dark.icons.hover.backgroundColor
+                : 'hsl(56, 45%, 80%)'};
 
         cursor: pointer;
     }
     .icons > .delete-icon:hover {
         background-color: ${({ theme, themeType }) =>
-            themeType === 'light'
-                ? 'hsl(1, 95%, 88%)'
-                : theme.dark.icons.hover.backgroundColor};
+            themeType === 'dark'
+                ? theme.dark.icons.hover.backgroundColor
+                : 'hsl(1, 95%, 88%)'};
     }
 
     /* responsice */

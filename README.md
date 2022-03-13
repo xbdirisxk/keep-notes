@@ -9,15 +9,15 @@
 -   add notes
 -   show notes in mosonry grid
 -   view notes in modal
--   delete notes
--   responsive grid
+-   archive note
+-   move note to trash :recycle:
+-   delete notes forever
 -   dark mode :sparkler: / :high_brightness:
+-   responsive grid
 
 ### upcoming features
 
--   archive note
 -   coloring background note :art:
--   instead of deleting move to trash :recycle:
 -   make todo list :ballot_box_with_check:
 -   add reminder to notes :bell:
 -   select number of notes together :heavy_check_mark:
