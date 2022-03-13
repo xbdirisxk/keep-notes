@@ -28,7 +28,7 @@ const ArchiveNotes = () => {
     };
     return (
         <Grid themeType={themeType}>
-            {archiveNote.length &&
+            {archiveNote.length ? (
                 archiveNote.map((note) => (
                     <NoteBox
                         key={note.id}
@@ -51,7 +51,10 @@ const ArchiveNotes = () => {
                             </span>
                         </div>
                     </NoteBox>
-                ))}
+                ))
+            ) : (
+                <p>archive is empty</p>
+            )}
         </Grid>
     );
 };
@@ -62,4 +65,5 @@ const Grid = styled.div`
     justify-content: center;
     align-items: center;
 `;
+
 export default ArchiveNotes;

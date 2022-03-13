@@ -23,32 +23,43 @@ const Trash = () => {
         setTrashNote(updateTrash);
     };
 
+    const emptyTrash = (id) => {
+        setTrashNote([]);
+    };
     return (
-        <Grid themeType={themeType}>
-            {trashNotes.length &&
-                trashNotes.map((note) => (
-                    <NoteBox
-                        key={note.id}
-                        className='item'
-                        themeType={themeType}
-                    >
-                        <div className='content'>
-                            <h4>{note.title}</h4>
-                            <p>{note.body}</p>
-                        </div>
-                        <div className='icons'>
-                            <span onClick={() => restoreNote(note.id)}>
-                                <FaTrashRestore />
-                            </span>
-                            <span className='delete-icon'>
-                                <RiDeleteBin2Fill
-                                    onClick={() => deleteForEver(note.id)}
-                                />
-                            </span>
-                        </div>
-                    </NoteBox>
-                ))}
-        </Grid>
+        <>
+            <Button themeType={themeType} onClick={emptyTrash}>
+                empty trash
+            </Button>
+            <Grid themeType={themeType}>
+                {trashNotes.length ? (
+                    trashNotes.map((note) => (
+                        <NoteBox
+                            key={note.id}
+                            className='item'
+                            themeType={themeType}
+                        >
+                            <div className='content'>
+                                <h4>{note.title}</h4>
+                                <p>{note.body}</p>
+                            </div>
+                            <div className='icons'>
+                                <span onClick={() => restoreNote(note.id)}>
+                                    <FaTrashRestore />
+                                </span>
+                                <span className='delete-icon'>
+                                    <RiDeleteBin2Fill
+                                        onClick={() => deleteForEver(note.id)}
+                                    />
+                                </span>
+                            </div>
+                        </NoteBox>
+                    ))
+                ) : (
+                    <p>trash is empty</p>
+                )}
+            </Grid>
+        </>
     );
 };
 
@@ -59,6 +70,21 @@ const Grid = styled.div`
     align-items: center;
     .icons {
         font-size: 1.4rem;
+    }
+`;
+const Button = styled.button`
+    background-color: ${({ themeType }) =>
+        themeType === 'dark' ? 'hsl(0, 0%, 26%)' : 'hsl(0, 0%, 96%)'};
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: ${({ themeType }) => (themeType === 'dark' ? 'yellow' : 'brown')};
+    transition: 0.2s;
+
+    &:hover {
+        background-color: ${({ themeType }) =>
+            themeType === 'dark' ? 'hsl(0, 0%, 15%)' : 'hsl(0, 0%, 90%)'};
     }
 `;
 
