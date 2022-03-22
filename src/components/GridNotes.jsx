@@ -7,7 +7,7 @@ import Masonry from 'react-masonry-css';
 import emptyNotesImg from '../assets/add_notes_undraw.svg';
 import { ArchiveContext, TrashContext } from '../context/NotesProvider';
 
-const GridNotes = () => {
+const GridNotes = ({ view }) => {
     const [open, setOpen] = useState(false);
     const [modal, setModal] = useState(null);
 
@@ -46,21 +46,37 @@ const GridNotes = () => {
     return (
         <>
             {notes.length ? (
-                <Masonry
-                    breakpointCols={breakpointColumnsObj}
-                    className='my-masonry-grid'
-                    columnClassName='my-masonry-grid_column'
-                >
-                    {notes.map((note) => (
-                        <Note
-                            key={note.id}
-                            note={note}
-                            handleOpen={handleOpen}
-                            handleArchive={handleArchive}
-                            handleDelete={moveToTrash}
-                        />
-                    ))}
-                </Masonry>
+                view === 'grid' ? (
+                    <Masonry
+                        breakpointCols={breakpointColumnsObj}
+                        className='my-masonry-grid'
+                        columnClassName='my-masonry-grid_column'
+                    >
+                        {notes.map((note) => (
+                            <Note
+                                key={note.id}
+                                note={note}
+                                view={view}
+                                handleOpen={handleOpen}
+                                handleArchive={handleArchive}
+                                handleDelete={moveToTrash}
+                            />
+                        ))}
+                    </Masonry>
+                ) : (
+                    <ListView>
+                        {notes.map((note) => (
+                            <Note
+                                key={note.id}
+                                note={note}
+                                view={view}
+                                handleOpen={handleOpen}
+                                handleArchive={handleArchive}
+                                handleDelete={moveToTrash}
+                            />
+                        ))}
+                    </ListView>
+                )
             ) : (
                 <Image
                     src={emptyNotesImg}
@@ -78,6 +94,15 @@ const GridNotes = () => {
         </>
     );
 };
+
+const ListView = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 6px;
+`;
 
 const Image = styled.img`
     height: 350px;

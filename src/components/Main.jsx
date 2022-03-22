@@ -9,7 +9,7 @@ import { NotesProvider } from '../context/NotesProvider';
 import { ArchiveNoteProvider } from '../context/NotesProvider';
 import { TrashNoteProvider } from '../context/NotesProvider';
 
-const Main = () => {
+const Main = ({ view }) => {
     return (
         <MainContent>
             <NotesProvider>
@@ -25,7 +25,7 @@ const Main = () => {
                                 element={
                                     <>
                                         <InputNoteField />
-                                        <GridNotes />
+                                        <GridNotes view={view} />
                                     </>
                                 }
                             />

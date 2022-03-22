@@ -7,12 +7,13 @@
 ## Features
 
 -   add notes
--   show notes in mosonry grid
--   view notes in modal
 -   archive note
 -   move note to trash :recycle:
 -   delete notes forever
 -   dark mode :sparkler: / :high_brightness:
+-   change view (grid/list)
+-   view notes in mosonry grid
+-   view note in modal
 -   responsive grid
 
 ### upcoming features
@@ -21,7 +22,6 @@
 -   make todo list :ballot_box_with_check:
 -   add reminder to notes :bell:
 -   select number of notes together :heavy_check_mark:
--   change notes grid view
 
 ## Development
 

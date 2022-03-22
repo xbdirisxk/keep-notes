@@ -6,11 +6,11 @@ import { IoMdMore } from 'react-icons/io';
 import { IoTrashOutline } from 'react-icons/io5';
 import { ThemeContext } from '../App';
 
-const Note = ({ note, handleOpen, handleDelete, handleArchive }) => {
+const Note = ({ note, view, handleOpen, handleDelete, handleArchive }) => {
     const [themeType] = useContext(ThemeContext);
 
     return (
-        <NoteBox className='note-box' themeType={themeType}>
+        <NoteBox className='note-box' themeType={themeType} view={view}>
             <div onClick={() => handleOpen(note.id)} className='content'>
                 <h3>{note.title}</h3>
                 <p>{note.body}</p>

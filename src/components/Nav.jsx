@@ -3,16 +3,20 @@ import Nav from '../styles/Nav.styled';
 import LogoImg from '../assets/keep_logo.png';
 import { FiMenu } from 'react-icons/fi';
 import { AiOutlineSearch, AiOutlineSetting } from 'react-icons/ai';
-import { TiThMenuOutline } from 'react-icons/ti';
 import { CgDarkMode } from 'react-icons/cg';
 import { SiRobotframework } from 'react-icons/si';
+import { BsViewStacked, BsGrid1X2 } from 'react-icons/bs';
 import { ThemeContext } from '../App';
 
-const Navbar = () => {
+const Navbar = ({ view, setView }) => {
     const [themeType, setThemeType] = useContext(ThemeContext);
 
     const themeToggler = () => {
         themeType === 'light' ? setThemeType('dark') : setThemeType('light');
+    };
+
+    const ViewToggler = () => {
+        view === 'grid' ? setView('list') : setView('grid');
     };
     return (
         <Nav themeType={themeType}>
@@ -39,8 +43,8 @@ const Navbar = () => {
             </div>
             <div className='nav-menu'>
                 <div>
-                    <span className='icon'>
-                        <TiThMenuOutline />
+                    <span className='icon' onClick={ViewToggler}>
+                        {view === 'grid' ? <BsViewStacked /> : <BsGrid1X2 />}
                     </span>
                     <span className='icon'>
                         <AiOutlineSetting />
