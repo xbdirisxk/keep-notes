@@ -11,7 +11,6 @@ const NoteBox = styled.div`
     box-shadow: 0 0 1px 1px hsl(0, 0%, 83%);
     width: ${({ view }) => (view === 'grid' ? '230px' : '60%')};
     max-height: 450px;
-    overflow: hidden;
     transition: 0.3s;
 
     &:hover {
@@ -21,6 +20,7 @@ const NoteBox = styled.div`
     .content {
         padding: 4px 16px 2px;
         cursor: pointer;
+        overflow: hidden;
     }
     .content > * {
         padding: 4px 0;

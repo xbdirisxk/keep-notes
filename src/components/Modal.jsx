@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
@@ -29,35 +30,46 @@ const NoteModal = ({ open, setOpen, modal, handleDelete, handleArchive }) => {
                         sx={{ bgcolor: 'background.paper' }}
                         className='modal-box'
                     >
-                        <Typography
-                            id='modal-modal-title'
-                            variant='h6'
-                            component='h2'
-                        >
-                            {modal.title}
-                        </Typography>
-                        <Typography id='modal-modal-description' sx={{ mt: 2 }}>
-                            {modal.body}
-                        </Typography>
+                        <div className='content'>
+                            <Typography
+                                id='modal-modal-title'
+                                variant='h6'
+                                component='h2'
+                            >
+                                {modal.title}
+                            </Typography>
+                            <Typography
+                                id='modal-modal-description'
+                                sx={{ mt: 2 }}
+                            >
+                                {modal.body}
+                            </Typography>
+                        </div>
                         <div className='icons'>
-                            <span>
+                            <Tooltip>
                                 <BiBellPlus />
-                            </span>
-                            <span>
+                            </Tooltip>
+                            <Tooltip>
                                 <MdOutlineColorLens />
-                            </span>
+                                <span className='tooltiptext'>
+                                    color this note with red
+                                </span>
+                            </Tooltip>
+                            <Tooltip onClick={() => handleArchive(modal.id)}>
+                                <BiArchiveOut />
+                                <span className='tooltiptext'>archive</span>
+                            </Tooltip>
 
-                            <span>
-                                <BiArchiveOut
-                                    onClick={() => handleArchive(modal.id)}
-                                />
-                            </span>
-                            <span onClick={() => handleDelete(modal.id)}>
+                            <Tooltip
+                                className='delete-icon'
+                                onClick={() => handleDelete(modal.id)}
+                            >
                                 <IoTrashOutline />
-                            </span>
-                            <span>
+                                <span className='tooltiptext'>delete</span>
+                            </Tooltip>
+                            <Tooltip>
                                 <IoMdMore />
-                            </span>
+                            </Tooltip>
                         </div>
                     </Box>
                 </Modal>
@@ -65,5 +77,35 @@ const NoteModal = ({ open, setOpen, modal, handleDelete, handleArchive }) => {
         </>
     );
 };
+
+const Tooltip = styled.span`
+    position: relative;
+    display: inline-block;
+    border: 1px dotted red;
+    .tooltiptext {
+        visibility: hidden;
+        font-size: 0.9rem;
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        padding: 3px 0;
+        border-radius: 6px;
+        width: 60px;
+        opacity: 0.6;
+        transition-delay: 0.25s;
+
+        /* Position the tooltip text */
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-top: 10px;
+        margin-left: -30px;
+        z-index: 10;
+    }
+
+    &:hover .tooltiptext {
+        visibility: visible;
+    }
+`;
 
 export default NoteModal;

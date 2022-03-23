@@ -81,6 +81,9 @@ const GlobalStyle = styled.createGlobalStyle`
         min-width: 30vw;
         max-width: 50vw;
         max-height: 85vh;
+    }
+
+    .modal-box > .content {
         overflow: auto;
     }
 

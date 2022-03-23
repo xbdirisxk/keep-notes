@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import styled from 'styled-components';
 import NoteBox from '../styles/NoteBox.styled';
 import { MdOutlineColorLens } from 'react-icons/md';
 import { BiBellPlus, BiArchiveOut } from 'react-icons/bi';
@@ -16,28 +17,60 @@ const Note = ({ note, view, handleOpen, handleDelete, handleArchive }) => {
                 <p>{note.body}</p>
             </div>
             <div className='icons'>
-                <span>
+                <Tooltip>
                     <BiBellPlus />
-                </span>
-                <span>
+                </Tooltip>
+                <Tooltip>
                     <MdOutlineColorLens />
-                </span>
+                </Tooltip>
+                <Tooltip onClick={() => handleArchive(note.id)}>
+                    <BiArchiveOut />
+                    <span className='tooltiptext'>archive</span>
+                </Tooltip>
 
-                <span>
-                    <BiArchiveOut onClick={() => handleArchive(note.id)} />
-                </span>
-                <span
+                <Tooltip
                     className='delete-icon'
                     onClick={() => handleDelete(note.id)}
                 >
                     <IoTrashOutline />
-                </span>
-                <span>
+                    <span className='tooltiptext'>delete</span>
+                </Tooltip>
+                <Tooltip>
                     <IoMdMore />
-                </span>
+                </Tooltip>
             </div>
         </NoteBox>
     );
 };
+
+const Tooltip = styled.span`
+    position: relative;
+    display: inline-block;
+
+    .tooltiptext {
+        visibility: hidden;
+        font-size: 0.9rem;
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        padding: 3px 0;
+        border-radius: 6px;
+        width: 60px;
+        opacity: 0.6;
+        transition-delay: 0.1s;
+
+        /* Position the tooltip text */
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-top: 10px;
+        margin-left: -30px;
+        z-index: 10;
+    }
+
+    &:hover .tooltiptext {
+        visibility: visible;
+    }
+`;
 
 export default Note;
