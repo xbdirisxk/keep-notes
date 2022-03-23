@@ -9,7 +9,7 @@ const NoteBox = styled.div`
     line-height: 1.3rem;
     border-radius: 10px;
     box-shadow: 0 0 1px 1px hsl(0, 0%, 83%);
-    width: ${({ view }) => (view === 'grid' ? '230px' : '60%')};
+    width: ${({ view }) => (view === 'list' ? '60%' : '230px')};
     max-height: 450px;
     transition: 0.3s;
 
