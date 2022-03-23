@@ -109,7 +109,13 @@ const GlobalStyle = styled.createGlobalStyle`
             themeType === 'dark'
                 ? theme.dark.icons.hover.backgroundColor
                 : theme.light.noteBox.icons.hover.backgroundColor};
-        cursor: default;
+        cursor: pointer;
+    }
+    .modal-box > .icons > .delete-icon:hover {
+        background-color: ${({ theme, themeType }) =>
+            themeType === 'dark'
+                ? theme.dark.icons.hover.deleteIconColor
+                : 'hsl(1, 95%, 88%)'};
     }
 
     @media (max-width: 750px) {

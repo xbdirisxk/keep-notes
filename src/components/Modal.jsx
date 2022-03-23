@@ -51,9 +51,6 @@ const NoteModal = ({ open, setOpen, modal, handleDelete, handleArchive }) => {
                             </Tooltip>
                             <Tooltip>
                                 <MdOutlineColorLens />
-                                <span className='tooltiptext'>
-                                    color this note with red
-                                </span>
                             </Tooltip>
                             <Tooltip onClick={() => handleArchive(modal.id)}>
                                 <BiArchiveOut />
@@ -81,7 +78,7 @@ const NoteModal = ({ open, setOpen, modal, handleDelete, handleArchive }) => {
 const Tooltip = styled.span`
     position: relative;
     display: inline-block;
-    border: 1px dotted red;
+
     .tooltiptext {
         visibility: hidden;
         font-size: 0.9rem;

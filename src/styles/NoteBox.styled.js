@@ -54,7 +54,7 @@ const NoteBox = styled.div`
     .icons > .delete-icon:hover {
         background-color: ${({ theme, themeType }) =>
             themeType === 'dark'
-                ? theme.dark.icons.hover.backgroundColor
+                ? theme.dark.icons.hover.deleteIconColor
                 : 'hsl(1, 95%, 88%)'};
     }
 

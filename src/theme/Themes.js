@@ -37,6 +37,7 @@ const theme = {
         icons: {
             hover: {
                 backgroundColor: 'hsl(0, 0%, 30%)',
+                deleteIconColor: 'hsl(1, 95%, 25%)',
             },
         },
         nav: {
