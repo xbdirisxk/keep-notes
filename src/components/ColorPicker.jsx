@@ -5,7 +5,22 @@ import { NotesContext } from '../context/NotesProvider';
 const ColorPicker = ({ selectedNoteId }) => {
     const [notes, setNotes] = useContext(NotesContext);
 
-    console.log(selectedNoteId);
+    const colorCirles = [
+        {
+            color: 'white',
+            class: 'bg-white',
+            selected: ' circled selected-color',
+        },
+        { color: '#f28b82', class: 'bg-red', selected: '' },
+        { color: '#fbbc04', class: 'bg-orange', selected: '' },
+
+        { color: '#fff475', class: 'bg-yellow', selected: '' },
+        { color: '#ccff90', class: 'bg-green', selected: '' },
+        { color: '#a7ffeb', class: 'bg-turquoise', selected: '' },
+        { color: '#aecbfa', class: 'bg-dark-blue', selected: '' },
+
+        { color: '#fdcfe8', class: 'bg-pink', selected: '' },
+    ];
 
     const changeColor = (newColor) => {
         setNotes(
@@ -19,40 +34,12 @@ const ColorPicker = ({ selectedNoteId }) => {
         <CPicker>
             <div className='dropdown'>
                 <div className='color-palette dropdown-menu'>
-                    <div
-                        onClick={() => changeColor('#fff')}
-                        className='bg-white circled selected-color'
-                    ></div>
-
-                    <div
-                        onClick={() => changeColor('#f28b82')}
-                        className='bg-red'
-                    ></div>
-                    <div
-                        onClick={() => changeColor(' #fbbc04')}
-                        className='bg-orange'
-                    ></div>
-                    <div
-                        onClick={() => changeColor('#fff475')}
-                        className='bg-yellow'
-                    ></div>
-
-                    <div
-                        onClick={() => changeColor('#ccff90')}
-                        className='bg-green'
-                    ></div>
-                    <div
-                        onClick={() => changeColor('#a7ffeb')}
-                        className='bg-turquoise'
-                    ></div>
-                    <div
-                        onClick={() => changeColor('#aecbfa')}
-                        className='bg-dark-blue'
-                    ></div>
-                    <div
-                        onClick={() => changeColor('#fdcfe8')}
-                        className='bg-pink'
-                    ></div>
+                    {colorCirles.map((circle) => (
+                        <div
+                            onClick={() => changeColor(circle.color)}
+                            className={circle.class + '' + circle.selected}
+                        ></div>
+                    ))}
                 </div>
             </div>
         </CPicker>

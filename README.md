@@ -11,6 +11,7 @@
 -   move note to trash :recycle:
 -   delete notes forever
 -   dark mode :sparkler: / :high_brightness:
+-   change note background color :art:
 -   change view (grid/list)
 -   view notes in mosonry grid
 -   view note in modal
@@ -18,7 +19,6 @@
 
 ### upcoming features
 
--   coloring background note :art:
 -   make todo list :ballot_box_with_check:
 -   add reminder to notes :bell:
 -   select number of notes together :heavy_check_mark:
