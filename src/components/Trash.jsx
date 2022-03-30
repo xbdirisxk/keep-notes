@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { TrashContext, NotesContext } from '../context/NotesProvider';
-import NoteBox from '../styles/NoteBox.styled';
+import NoteBox from '../styles/NoteCard.styled';
 import { ThemeContext } from '../App';
 import { FaTrashRestore } from 'react-icons/fa';
 import { RiDeleteBin2Fill } from 'react-icons/ri';

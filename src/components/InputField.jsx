@@ -14,7 +14,7 @@ const AddNoteField = () => {
         event.preventDefault();
 
         if (!title) {
-            alert('please make note title');
+            alert('please add note title');
             return;
         }
 
@@ -24,6 +24,7 @@ const AddNoteField = () => {
                 id: Math.random() * 1000000,
                 title,
                 body,
+                color: 'white',
             },
         ]);
         setTitle('');

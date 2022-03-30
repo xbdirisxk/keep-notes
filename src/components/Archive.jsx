@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import NoteBox from '../styles/NoteBox.styled';
+import NoteBox from '../styles/NoteCard.styled';
 import { ArchiveContext } from '../context/NotesProvider';
 import { MdOutlineUnarchive } from 'react-icons/md';
 import { IoTrashOutline } from 'react-icons/io5';

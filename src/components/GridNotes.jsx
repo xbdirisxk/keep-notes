@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import Note from './Note';
+import Note from './NoteCard';
 import NoteModal from './Modal';
 import { NotesContext } from '../context/NotesProvider';
 import styled from 'styled-components';

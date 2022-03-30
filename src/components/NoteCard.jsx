@@ -1,17 +1,24 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
-import NoteBox from '../styles/NoteBox.styled';
+import NoteCard from '../styles/NoteCard.styled';
 import { MdOutlineColorLens } from 'react-icons/md';
 import { BiBellPlus, BiArchiveOut } from 'react-icons/bi';
 import { IoMdMore } from 'react-icons/io';
 import { IoTrashOutline } from 'react-icons/io5';
 import { ThemeContext } from '../App';
+import ColorPicker from './ColorPicker';
 
 const Note = ({ note, view, handleOpen, handleDelete, handleArchive }) => {
     const [themeType] = useContext(ThemeContext);
+    const [showColorPicker, setShowColorPicker] = useState(false);
 
     return (
-        <NoteBox className='note-box' themeType={themeType} view={view}>
+        <NoteCard
+            className='note-box'
+            themeType={themeType}
+            view={view}
+            bgColor={note.color}
+        >
             <div onClick={() => handleOpen(note.id)} className='content'>
                 <h3>{note.title}</h3>
                 <p>{note.body}</p>
@@ -20,8 +27,17 @@ const Note = ({ note, view, handleOpen, handleDelete, handleArchive }) => {
                 <Tooltip>
                     <BiBellPlus />
                 </Tooltip>
-                <Tooltip>
+                <Tooltip
+                    onClick={() =>
+                        showColorPicker
+                            ? setShowColorPicker(false)
+                            : setShowColorPicker(true)
+                    }
+                >
                     <MdOutlineColorLens />
+                    {showColorPicker && (
+                        <ColorPicker selectedNoteId={note.id} />
+                    )}
                 </Tooltip>
                 <Tooltip onClick={() => handleArchive(note.id)}>
                     <BiArchiveOut />
@@ -39,7 +55,7 @@ const Note = ({ note, view, handleOpen, handleDelete, handleArchive }) => {
                     <IoMdMore />
                 </Tooltip>
             </div>
-        </NoteBox>
+        </NoteCard>
     );
 };
 
