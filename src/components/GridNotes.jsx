@@ -8,7 +8,7 @@ import emptyNotesImg from '../assets/add_notes_undraw.svg';
 import { ArchiveContext, TrashContext } from '../context/NotesProvider';
 
 const GridNotes = ({ view }) => {
-    const [open, setOpen] = useState(false);
+    const [openModal, setOpenModal] = useState(false);
     const [modal, setModal] = useState(null);
 
     const [notes, setNotes] = useContext(NotesContext);
@@ -18,7 +18,7 @@ const GridNotes = ({ view }) => {
     const handleOpen = (id) => {
         const note = notes.filter((note) => note.id === id)[0];
         setModal(note);
-        setOpen(true);
+        setOpenModal(true);
     };
 
     const handleArchive = (id) => {
@@ -26,7 +26,7 @@ const GridNotes = ({ view }) => {
         const updateNotes = notes.filter((note) => note.id !== id);
         setNotes(updateNotes);
         setArchiveNote([...archiveNote, item]);
-        setOpen(false);
+        setOpenModal(false);
     };
 
     const moveToTrash = (id) => {
@@ -34,7 +34,7 @@ const GridNotes = ({ view }) => {
         const updateNotes = notes.filter((note) => note.id !== id);
         setNotes(updateNotes);
         setTrashNote([...trashNote, item]);
-        setOpen(false);
+        setOpenModal(false);
     };
 
     const breakpointColumnsObj = {
@@ -85,8 +85,8 @@ const GridNotes = ({ view }) => {
                 />
             )}
             <NoteModal
-                open={open}
-                setOpen={setOpen}
+                open={openModal}
+                setOpen={setOpenModal}
                 modal={modal}
                 handleArchive={handleArchive}
                 handleDelete={moveToTrash}

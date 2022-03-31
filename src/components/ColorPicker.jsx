@@ -5,20 +5,19 @@ import { NotesContext } from '../context/NotesProvider';
 const ColorPicker = ({ selectedNoteId }) => {
     const [notes, setNotes] = useContext(NotesContext);
 
-    const colorCirles = [
+    let colorCirles = [
         {
             color: 'white',
             class: 'bg-white',
-            selected: ' circled selected-color',
+            selected: 'circled selected-color',
         },
         { color: '#f28b82', class: 'bg-red', selected: '' },
         { color: '#fbbc04', class: 'bg-orange', selected: '' },
-
         { color: '#fff475', class: 'bg-yellow', selected: '' },
         { color: '#ccff90', class: 'bg-green', selected: '' },
+
         { color: '#a7ffeb', class: 'bg-turquoise', selected: '' },
         { color: '#aecbfa', class: 'bg-dark-blue', selected: '' },
-
         { color: '#fdcfe8', class: 'bg-pink', selected: '' },
     ];
 
@@ -36,8 +35,9 @@ const ColorPicker = ({ selectedNoteId }) => {
                 <div className='color-palette dropdown-menu'>
                     {colorCirles.map((circle) => (
                         <div
+                            key={Math.random() * 100000}
                             onClick={() => changeColor(circle.color)}
-                            className={circle.class + '' + circle.selected}
+                            className={circle.class + ' ' + circle.selected}
                         ></div>
                     ))}
                 </div>
@@ -69,15 +69,15 @@ const CPicker = styled.div`
 
     // Stickers inside palette
     .color-palette div {
+        display: inline-block;
         box-sizing: border-box;
         border-radius: 50%;
         height: 26px;
         width: 26px;
         margin: 2px;
         opacity: 1;
-        cursor: pointer;
-        display: inline-block;
         border: 2px solid transparent;
+        cursor: pointer;
         outline: none !important;
     }
 
@@ -129,15 +129,3 @@ const CPicker = styled.div`
 `;
 
 export default ColorPicker;
-
-/*
-chosen colors:  
-    $note-red: #f28b82;
-    $note-yellow: #fff475;
-    $note-turquoise: #a7ffeb;
-    $note-blue: #cbf0f8;
-    $note-pink: #fdcfe8;
-    $note-brown: #e6c9a8;
-    $note-grey: #e8eaed;
-
-*/
