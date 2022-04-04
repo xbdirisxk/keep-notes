@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
-import NoteCard from '../styles/NoteCard.styled';
+import NoteCard from './NoteCard.styled';
 import { MdOutlineColorLens } from 'react-icons/md';
 import { BiBellPlus, BiArchiveOut } from 'react-icons/bi';
 import { IoMdMore } from 'react-icons/io';
 import { IoTrashOutline } from 'react-icons/io5';
-import { ThemeContext } from '../App';
+import { ThemeContext } from '../../App';
 import ColorPicker from './ColorPicker';
 
 const Note = ({ note, view, handleOpen, handleDelete, handleArchive }) => {

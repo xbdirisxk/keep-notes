@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
-import Nav from '../styles/Nav.styled';
-import LogoImg from '../assets/keep_logo.png';
+import Nav from './Nav.styled';
+import LogoImg from '../../assets/keep_logo.png';
 import { FiMenu } from 'react-icons/fi';
 import { AiOutlineSearch, AiOutlineSetting } from 'react-icons/ai';
 import { CgDarkMode } from 'react-icons/cg';
 import { SiRobotframework } from 'react-icons/si';
 import { BsViewStacked, BsGrid1X2 } from 'react-icons/bs';
-import { ThemeContext } from '../App';
+import { ThemeContext } from '../../App';
 
 const Navbar = ({ view, setView }) => {
     const [themeType, setThemeType] = useContext(ThemeContext);

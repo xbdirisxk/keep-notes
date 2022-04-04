@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import { ThemeContext } from '../App';
-import SidebarContainer from '../styles/Sidebar.styled';
+import { ThemeContext } from '../../App';
+import SidebarContainer from './Sidebar.styled';
 import { MdLightbulbOutline } from 'react-icons/md';
 import { AiOutlineBell } from 'react-icons/ai';
 import { BiPencil, BiArchiveIn } from 'react-icons/bi';

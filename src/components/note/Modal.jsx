@@ -8,7 +8,7 @@ import { MdOutlineColorLens } from 'react-icons/md';
 import { BiBellPlus, BiArchiveOut } from 'react-icons/bi';
 import { IoMdMore } from 'react-icons/io';
 import { IoTrashOutline } from 'react-icons/io5';
-import { ThemeContext } from '../App';
+import { ThemeContext } from '../../App';
 
 const NoteModal = ({ open, setOpen, modal, handleDelete, handleArchive }) => {
     const [themeType] = useContext(ThemeContext);

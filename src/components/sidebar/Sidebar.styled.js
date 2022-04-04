@@ -13,6 +13,7 @@ const SidebarContainer = styled.div`
     width: 21vw;
     height: 88vh;
     position: fixed;
+    z-index: 100;
 
     .menu-item {
         display: flex;

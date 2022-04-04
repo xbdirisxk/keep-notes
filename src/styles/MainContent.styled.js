@@ -9,6 +9,10 @@ const MainContent = styled.main`
     padding: 23px;
     width: 78vw;
     margin: 75px 0 0 21vw;
+
+    @media (max-width: 600px) {
+        margin-left: 15vw;
+    }
 `;
 
 export default MainContent;

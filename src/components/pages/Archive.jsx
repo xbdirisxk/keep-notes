@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import NoteBox from '../styles/NoteCard.styled';
-import { ArchiveContext } from '../context/NotesProvider';
+import NoteBox from '../note/NoteCard.styled';
+import { ArchiveContext } from '../../context/NotesProvider';
 import { MdOutlineUnarchive } from 'react-icons/md';
 import { IoTrashOutline } from 'react-icons/io5';
-import { ThemeContext } from '../App';
-import { NotesContext, TrashContext } from '../context/NotesProvider';
+import { ThemeContext } from '../../App';
+import { NotesContext, TrashContext } from '../../context/NotesProvider';
 
 const ArchiveNotes = () => {
     const [themeType] = useContext(ThemeContext);

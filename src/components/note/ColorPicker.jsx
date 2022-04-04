@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { NotesContext } from '../context/NotesProvider';
+import { NotesContext } from '../../context/NotesProvider';
 
 const ColorPicker = ({ selectedNoteId }) => {
     const [notes, setNotes] = useContext(NotesContext);

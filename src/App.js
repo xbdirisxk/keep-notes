@@ -1,8 +1,8 @@
 import React, { useState, createContext } from 'react';
 import './app.css';
 import GlobalStyle from './styles/Global.styled';
-import Navbar from './components/Nav';
-import SideBar from './components/SideBar';
+import Navbar from './components/nav/Nav';
+import SideBar from './components/sidebar/SideBar';
 import Main from './components/Main';
 
 const ThemeContext = createContext('light');

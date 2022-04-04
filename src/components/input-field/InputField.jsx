@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
-import { NotesContext } from '../context/NotesProvider';
-import InputContainer from '../styles/InputField.styled';
-import { ThemeContext } from '../App';
+import { NotesContext } from '../../context/NotesProvider';
+import InputContainer from './InputField.styled';
+import { ThemeContext } from '../../App';
 
 const AddNoteField = () => {
     const [title, setTitle] = useState('');
