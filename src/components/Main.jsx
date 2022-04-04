@@ -5,7 +5,7 @@ import InputNoteField from './input-field/InputField';
 import GridNotes from './note/GridNotes';
 import ArchiveNotes from './pages/Archive';
 import Trash from './pages/Trash';
-import { NotesProvider } from '../context/NotesProvider';
+import NotesProvider from '../context/NotesProvider';
 import { ArchiveNoteProvider } from '../context/NotesProvider';
 import { TrashNoteProvider } from '../context/NotesProvider';
 

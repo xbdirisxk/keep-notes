@@ -1,4 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
+import { ThemeContext } from '../../App';
+import { NotesContext } from '../../context/NotesProvider';
 import styled from 'styled-components';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -8,12 +10,26 @@ import { MdOutlineColorLens } from 'react-icons/md';
 import { BiBellPlus, BiArchiveOut } from 'react-icons/bi';
 import { IoMdMore } from 'react-icons/io';
 import { IoTrashOutline } from 'react-icons/io5';
-import { ThemeContext } from '../../App';
 
 const NoteModal = ({ open, setOpen, modal, handleDelete, handleArchive }) => {
+    const [title, settitle] = useState('');
+    const [body, setBody] = useState('');
+
     const [themeType] = useContext(ThemeContext);
+    const [notes, setNotes] = useContext(NotesContext);
 
     const handleClose = () => setOpen(false);
+
+    const handleEdit = () => {
+        // const editingNote
+
+        setNotes([
+            ...notes,
+            //...editednote
+            // editednote.title
+            // editednote.body
+        ]);
+    };
 
     return (
         <>
@@ -87,23 +103,17 @@ const NoteModal = ({ open, setOpen, modal, handleDelete, handleArchive }) => {
     ============ */
 const BoxContainer = styled.div`
     .css-1k9ek97 {
-        background-color: ${({ theme, themeType }) =>
-            themeType === 'dark'
-                ? theme.dark.background
-                : theme.light.background};
-
-        /* background-color: yellow !important; */
         background-color: ${({ theme, themeType, bgColor }) =>
             themeType !== 'dark'
                 ? bgColor
-                : bgColor !== 'white'
+                : bgColor !== '#fff'
                 ? bgColor
                 : theme.dark.background} !important;
 
         color: ${({ themeType, bgColor }) =>
             themeType !== 'dark'
                 ? '#000'
-                : bgColor !== 'white'
+                : bgColor !== '#fff'
                 ? '#000'
                 : '#fff'} !important;
 

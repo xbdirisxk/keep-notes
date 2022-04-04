@@ -12,6 +12,14 @@ const Note = ({ note, view, handleOpen, handleDelete, handleArchive }) => {
     const [themeType] = useContext(ThemeContext);
     const [showColorPicker, setShowColorPicker] = useState(false);
 
+    const handleShow = () => {
+        showColorPicker ? setShowColorPicker(false) : setShowColorPicker(true);
+    };
+
+    // const handleClose = (e) => {
+    //     if(e.)
+    // };
+
     return (
         <NoteCard
             className='note-box'
@@ -27,13 +35,7 @@ const Note = ({ note, view, handleOpen, handleDelete, handleArchive }) => {
                 <Tooltip>
                     <BiBellPlus />
                 </Tooltip>
-                <Tooltip
-                    onClick={() =>
-                        showColorPicker
-                            ? setShowColorPicker(false)
-                            : setShowColorPicker(true)
-                    }
-                >
+                <Tooltip onClick={handleShow}>
                     <MdOutlineColorLens />
                     {showColorPicker && (
                         <ColorPicker selectedNoteId={note.id} />

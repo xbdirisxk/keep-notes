@@ -1,11 +1,11 @@
 import React, { useState, useContext } from 'react';
-import styled from 'styled-components';
 import Note from './NoteCard';
-import NoteModal from './Modal';
+import NoteModal from '../edit-note/Modal';
 import { NotesContext } from '../../context/NotesProvider';
-import Masonry from 'react-masonry-css';
 import emptyNotesImg from '../../assets/add_notes_undraw.svg';
 import { ArchiveContext, TrashContext } from '../../context/NotesProvider';
+import styled from 'styled-components';
+import Masonry from 'react-masonry-css';
 
 const GridNotes = ({ view }) => {
     const [openModal, setOpenModal] = useState(false);

@@ -4,12 +4,12 @@ const NoteCard = styled.div`
     background-color: ${({ theme, themeType, bgColor }) =>
         themeType !== 'dark'
             ? bgColor
-            : bgColor !== 'white'
+            : bgColor !== '#fff'
             ? bgColor
             : theme.dark.background};
 
     color: ${({ themeType, bgColor }) =>
-        themeType !== 'dark' ? '#000' : bgColor !== 'white' ? '#000' : '#fff'};
+        themeType !== 'dark' ? '#000' : bgColor !== '#fff' ? '#000' : '#fff'};
     text-align: left;
     margin: 10px;
     line-height: 1.3rem;

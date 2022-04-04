@@ -7,18 +7,18 @@ const ColorPicker = ({ selectedNoteId }) => {
 
     let colorCirles = [
         {
-            color: 'white',
+            color: '#fff',
             class: 'bg-white',
             selected: 'circled selected-color',
         },
         { color: '#f28b82', class: 'bg-red', selected: '' },
-        { color: '#fbbc04', class: 'bg-orange', selected: '' },
         { color: '#fff475', class: 'bg-yellow', selected: '' },
         { color: '#ccff90', class: 'bg-green', selected: '' },
 
         { color: '#a7ffeb', class: 'bg-turquoise', selected: '' },
         { color: '#aecbfa', class: 'bg-dark-blue', selected: '' },
         { color: '#fdcfe8', class: 'bg-pink', selected: '' },
+        { color: '#e8eaed', class: 'bg-gray', selected: '' },
     ];
 
     const changeColor = (newColor) => {
@@ -103,10 +103,6 @@ const CPicker = styled.div`
         background-color: #f28b82;
     }
 
-    .bg-orange {
-        background-color: #fbbc04;
-    }
-
     .bg-yellow {
         background-color: #fff475;
     }
@@ -125,6 +121,9 @@ const CPicker = styled.div`
 
     .bg-pink {
         background-color: #fdcfe8;
+    }
+    .bg-gray {
+        background-color: #e8eaed;
     }
 `;
 
