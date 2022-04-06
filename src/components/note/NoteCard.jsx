@@ -16,10 +16,6 @@ const Note = ({ note, view, handleOpen, handleDelete, handleArchive }) => {
         showColorPicker ? setShowColorPicker(false) : setShowColorPicker(true);
     };
 
-    // const handleClose = (e) => {
-    //     if(e.)
-    // };
-
     return (
         <NoteCard
             className='note-box'
@@ -43,7 +39,7 @@ const Note = ({ note, view, handleOpen, handleDelete, handleArchive }) => {
                 </Tooltip>
                 <Tooltip onClick={() => handleArchive(note.id)}>
                     <BiArchiveOut />
-                    <span className='tooltiptext'>archive</span>
+                    <span className='tooltip-text'>archive</span>
                 </Tooltip>
 
                 <Tooltip
@@ -51,7 +47,7 @@ const Note = ({ note, view, handleOpen, handleDelete, handleArchive }) => {
                     onClick={() => handleDelete(note.id)}
                 >
                     <IoTrashOutline />
-                    <span className='tooltiptext'>delete</span>
+                    <span className='tooltip-text'>delete</span>
                 </Tooltip>
                 <Tooltip>
                     <IoMdMore />
@@ -65,9 +61,10 @@ const Tooltip = styled.span`
     position: relative;
     display: inline-block;
 
-    .tooltiptext {
+    .tooltip-text {
         visibility: hidden;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
+        font-weight: bold;
         background-color: #000;
         color: #fff;
         text-align: center;
@@ -86,7 +83,7 @@ const Tooltip = styled.span`
         z-index: 10;
     }
 
-    &:hover .tooltiptext {
+    &:hover .tooltip-text {
         visibility: visible;
     }
 `;

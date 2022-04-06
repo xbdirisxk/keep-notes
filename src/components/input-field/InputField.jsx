@@ -4,11 +4,11 @@ import InputContainer from './InputField.styled';
 import { ThemeContext } from '../../App';
 
 const AddNoteField = () => {
-    const [title, setTitle] = useState('');
-    const [body, setBody] = useState('');
-
     const [notes, setNotes] = useContext(NotesContext);
     const [themeType] = useContext(ThemeContext);
+
+    const [title, setTitle] = useState('');
+    const [body, setBody] = useState('');
 
     const handleAdd = (event) => {
         event.preventDefault();
@@ -22,9 +22,9 @@ const AddNoteField = () => {
             ...notes,
             {
                 id: Math.random() * 1000000,
+                color: 'white',
                 title,
                 body,
-                color: 'white',
             },
         ]);
         setTitle('');

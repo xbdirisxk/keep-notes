@@ -53,7 +53,7 @@ const NoteCard = styled.div`
         background-color: ${({ theme, themeType }) =>
             themeType === 'dark'
                 ? theme.dark.icons.hover.backgroundColor
-                : 'hsl(56, 45%, 80%)'};
+                : 'hsla(56, 45%, 80%, 0.8)'};
 
         cursor: pointer;
     }

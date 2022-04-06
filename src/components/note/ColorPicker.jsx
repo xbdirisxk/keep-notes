@@ -29,8 +29,12 @@ const ColorPicker = ({ selectedNoteId }) => {
         );
     };
 
+    const handleClose = () => {
+        console.log('color picker is open');
+    };
+
     return (
-        <CPicker>
+        <CPicker onKeyDown={() => console.log('hello I am color picker')}>
             <div className='dropdown'>
                 <div className='color-palette dropdown-menu'>
                     {colorCirles.map((circle) => (
@@ -54,7 +58,9 @@ const CPicker = styled.div`
 
     // Color palette
     .color-palette {
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+        background-color: hsla(0, 0%, 99%, 0.7);
+        border-radius: 5px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
         padding: 5px 10px 3px;
         width: 160px;
 
@@ -77,6 +83,7 @@ const CPicker = styled.div`
         margin: 2px;
         opacity: 1;
         border: 2px solid transparent;
+        border-color: rgba(0, 0, 0, 0.1);
         cursor: pointer;
         outline: none !important;
     }
