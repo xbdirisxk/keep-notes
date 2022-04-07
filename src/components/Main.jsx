@@ -9,9 +9,9 @@ import NotesProvider from '../context/NotesProvider';
 import { ArchiveNoteProvider } from '../context/NotesProvider';
 import { TrashNoteProvider } from '../context/NotesProvider';
 
-const Main = ({ view }) => {
+const Main = ({ view, showSidebar }) => {
     return (
-        <MainContent>
+        <MainContent sidebarVisible={showSidebar}>
             <NotesProvider>
                 <ArchiveNoteProvider>
                     <TrashNoteProvider>
@@ -25,7 +25,10 @@ const Main = ({ view }) => {
                                 element={
                                     <>
                                         <InputNoteField />
-                                        <GridNotes view={view} />
+                                        <GridNotes
+                                            view={view}
+                                            sidebarVisible={showSidebar}
+                                        />
                                     </>
                                 }
                             />

@@ -10,10 +10,11 @@ const SidebarContainer = styled.div`
     padding: 5px 0;
     margin-top: 75px;
     font-size: 0.9rem;
-    width: 21vw;
+    width: ${({ show }) => (show ? '21vw' : '6vw')};
     height: 88vh;
     position: fixed;
     z-index: 100;
+    transition: 0.3s;
 
     .menu-item {
         display: flex;
@@ -55,6 +56,10 @@ const SidebarContainer = styled.div`
         margin-left: 20px;
     }
 
+    .menu-item > .text {
+        visibility: ${({ show }) => (show ? 'visible' : 'collapse')};
+    }
+
     @media (max-width: 800px) {
         width: 12vw;
 
@@ -62,7 +67,7 @@ const SidebarContainer = styled.div`
             padding: 0;
         }
         .menu-item > .text {
-            display: none;
+            visibility: collapse;
         }
         .menu-item > .icon {
             margin-left: 15px;

@@ -3,6 +3,7 @@
 -> [`The Odin Project`](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/javascript-final-project) - final frontend project
 
 ### [Live Demo](https://xbdirisxk.github.io/keep-notes/) :point_left:
+-currenty working the best in firefox-
 
 ## Features
 
@@ -21,7 +22,7 @@
 
 -   make todo list :ballot_box_with_check:
 -   add reminder to notes :bell:
--   select number of notes together :heavy_check_mark:
+
 
 ## Development
 

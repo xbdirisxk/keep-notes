@@ -7,7 +7,7 @@ import { ArchiveContext, TrashContext } from '../../context/NotesProvider';
 import styled from 'styled-components';
 import Masonry from 'react-masonry-css';
 
-const GridNotes = ({ view }) => {
+const GridNotes = ({ view, sidebarVisible }) => {
     const [openModal, setOpenModal] = useState(false);
     const [modal, setModal] = useState(null);
 
@@ -38,7 +38,7 @@ const GridNotes = ({ view }) => {
     };
 
     const breakpointColumnsObj = {
-        default: 3,
+        default: sidebarVisible ? 3 : 4,
         1100: 3,
         810: 2,
         750: 1,

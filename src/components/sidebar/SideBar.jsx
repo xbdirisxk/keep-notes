@@ -7,11 +7,11 @@ import { AiOutlineBell } from 'react-icons/ai';
 import { BiPencil, BiArchiveIn } from 'react-icons/bi';
 import { BsTrash } from 'react-icons/bs';
 
-const SideBar = () => {
+const SideBar = ({ show }) => {
     const [themeType] = useContext(ThemeContext);
 
     return (
-        <SidebarContainer themeType={themeType}>
+        <SidebarContainer themeType={themeType} show={show}>
             <NavLink to='/' className='menu-item'>
                 <MdLightbulbOutline className='icon' />
                 <span className='text'>Notes</span>

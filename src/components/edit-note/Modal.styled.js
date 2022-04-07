@@ -74,6 +74,13 @@ const BoxContainer = styled.div`
             min-width: 86vw;
         }
     }
+
+    /* .text-area {
+        background-color: inherit;
+        min-width: 30vw;
+        max-width: 50vw;
+        max-height: auto;
+    } */
 `;
 
 /*----- Tooltip styles -----*/

@@ -7,8 +7,9 @@ const MainContent = styled.main`
     align-items: center;
     text-align: center;
     padding: 23px;
-    width: 78vw;
-    margin: 75px 0 0 21vw;
+    width: ${({ sidebarVisible }) => (!sidebarVisible ? '93vw' : '78vw')};
+    margin: 75px 0 0
+        ${({ sidebarVisible }) => (sidebarVisible ? '21vw' : '12vw')};
 
     @media (max-width: 600px) {
         margin-left: 15vw;

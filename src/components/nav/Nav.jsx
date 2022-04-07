@@ -8,7 +8,7 @@ import { SiRobotframework } from 'react-icons/si';
 import { BsViewStacked, BsGrid1X2 } from 'react-icons/bs';
 import { ThemeContext } from '../../App';
 
-const Navbar = ({ view, setView }) => {
+const Navbar = ({ view, setView, showSidebar, setShowSidebar }) => {
     const [themeType, setThemeType] = useContext(ThemeContext);
 
     const themeToggler = () => {
@@ -18,10 +18,15 @@ const Navbar = ({ view, setView }) => {
     const ViewToggler = () => {
         view === 'grid' ? setView('list') : setView('grid');
     };
+
+    const toggleSidebar = () => {
+        showSidebar ? setShowSidebar(false) : setShowSidebar(true);
+    };
+
     return (
         <Nav themeType={themeType}>
             <div className='logo'>
-                <span className='menu-icon icon'>
+                <span className='menu-icon icon' onClick={toggleSidebar}>
                     <FiMenu />
                 </span>
                 <img

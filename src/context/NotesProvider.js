@@ -8,21 +8,21 @@ const NotesProvider = (props) => {
             id: 1,
             title: 'fact',
             body: 'The world’s oldest wooden wheel has been around for more than 5,000 years',
-            color: '#fff475',
+            color: '#fff',
         },
         {
             id: 2,
             title: 'loremII',
             body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt repellendus ratione velit! Doloribus nostrum, atque omnis laboriosam natus in aliquid cupiditate iste facilis soluta cum voluptatum accusantium id vitae accusamus, expedita quod veniam tempore delectus libero ducimus accusamus laboriosam error.',
-            color: '#a7ffeb',
+            color: '#fff475',
+        },
+        {
+            id: 6,
+            title: 'loremII',
+            body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt repellendus ratione velit! Doloribus nostrum, atque omnis laboriosam natus in aliquid cupiditate iste facilis soluta cum voluptatum accusantium id vitae accusamus.',
+            color: '#e8eaed',
         },
 
-        {
-            id: 3,
-            title: 'fun fact',
-            body: 'Steve Jobs, Steve Wozniak, and Ron Wayne started Apple Inc. on April Fools’ Day',
-            color: '#fff',
-        },
         {
             id: 4,
             title: 'loremIV',
@@ -34,13 +34,13 @@ const NotesProvider = (props) => {
             id: 5,
             title: 'loremV',
             body: 'minus a consectetur nemo. Atque animi voluptatum voluptatem.',
-            color: '#fff',
+            color: '#a7ffeb',
         },
         {
-            id: 6,
-            title: 'loremII',
-            body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt repellendus ratione velit! Doloribus nostrum, atque omnis laboriosam natus in aliquid cupiditate iste facilis soluta cum voluptatum accusantium id vitae accusamus.',
-            color: '#e8eaed',
+            id: 3,
+            title: 'fun fact',
+            body: 'Steve Jobs, Steve Wozniak, and Ron Wayne started Apple Inc. on April Fools’ Day',
+            color: '#fff',
         },
     ]);
 
